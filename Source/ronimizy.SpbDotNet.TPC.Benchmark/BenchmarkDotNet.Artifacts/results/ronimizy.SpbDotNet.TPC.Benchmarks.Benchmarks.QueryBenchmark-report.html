@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>ronimizy.SpbDotNet.TPC.Benchmarks.Benchmarks.QueryBenchmark-20230108-174713</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.3, OS=macOS 13.0 (22A380) [Darwin 22.1.0]
+Apple M1 Pro, 1 CPU, 10 logical and 10 physical cores
+.NET SDK=7.0.101
+  [Host]     : .NET 7.0.1 (7.0.122.56804), Arm64 RyuJIT AdvSIMD
+  Job-FNHWWV : .NET 7.0.1 (7.0.122.56804), Arm64 RyuJIT AdvSIMD
+</code></pre>
+<pre><code>InvocationCount=1  UnrollFactor=1  
+</code></pre>
+
+<table>
+<thead><tr><th>                 Method</th><th>Size</th><th>     Factory</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Median</th><th>Gen0</th><th>Gen1</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>SelectFullHierarchyBenchmark</td><td>1000</td><td>TpcDatabaseContext</td><td>5.134 ms</td><td>0.1026 ms</td><td>0.2479 ms</td><td>5.087 ms</td><td>-</td><td>-</td><td>2383.24 KB</td>
+</tr><tr><td>SelectFullHierarchyBenchmark</td><td>1000</td><td>TphDatabaseContext</td><td>5.268 ms</td><td>0.1040 ms</td><td>0.2054 ms</td><td>5.255 ms</td><td>-</td><td>-</td><td>2380.37 KB</td>
+</tr><tr><td>SelectFullHierarchyBenchmark</td><td>1000</td><td>TptDatabaseContext</td><td>7.865 ms</td><td>0.1609 ms</td><td>0.4296 ms</td><td>7.743 ms</td><td>-</td><td>-</td><td>3337.96 KB</td>
+</tr><tr><td>SelectFullHierarchyBenchmark</td><td>10000</td><td>TpcDatabaseContext</td><td>52.453 ms</td><td>1.0365 ms</td><td>1.3477 ms</td><td>52.395 ms</td><td>3000.0000</td><td>-</td><td>23796.56 KB</td>
+</tr><tr><td>SelectFullHierarchyBenchmark</td><td>10000</td><td>TphDatabaseContext</td><td>47.863 ms</td><td>0.9527 ms</td><td>1.2388 ms</td><td>47.524 ms</td><td>3000.0000</td><td>-</td><td>23673.06 KB</td>
+</tr><tr><td>SelectFullHierarchyBenchmark</td><td>10000</td><td>TptDatabaseContext</td><td>81.408 ms</td><td>1.5928 ms</td><td>2.7476 ms</td><td>81.045 ms</td><td>5000.0000</td><td>1000.0000</td><td>33187.77 KB</td>
+</tr><tr><td>SelectHierarchySliceBenchmark</td><td>1000</td><td>TpcDatabaseContext</td><td>3.731 ms</td><td>0.3061 ms</td><td>0.8430 ms</td><td>3.387 ms</td><td>-</td><td>-</td><td>1186.38 KB</td>
+</tr><tr><td>SelectHierarchySliceBenchmark</td><td>1000</td><td>TphDatabaseContext</td><td>3.089 ms</td><td>0.0895 ms</td><td>0.2494 ms</td><td>3.038 ms</td><td>-</td><td>-</td><td>1261.97 KB</td>
+</tr><tr><td>SelectHierarchySliceBenchmark</td><td>1000</td><td>TptDatabaseContext</td><td>4.604 ms</td><td>0.0907 ms</td><td>0.1681 ms</td><td>4.606 ms</td><td>-</td><td>-</td><td>2000.02 KB</td>
+</tr><tr><td>SelectHierarchySliceBenchmark</td><td>10000</td><td>TpcDatabaseContext</td><td>22.268 ms</td><td>0.4401 ms</td><td>0.3901 ms</td><td>22.363 ms</td><td>1000.0000</td><td>-</td><td>12292.13 KB</td>
+</tr><tr><td>SelectHierarchySliceBenchmark</td><td>10000</td><td>TphDatabaseContext</td><td>23.265 ms</td><td>0.4638 ms</td><td>1.1111 ms</td><td>23.105 ms</td><td>1000.0000</td><td>-</td><td>12234.84 KB</td>
+</tr><tr><td>SelectHierarchySliceBenchmark</td><td>10000</td><td>TptDatabaseContext</td><td>46.962 ms</td><td>0.9231 ms</td><td>1.5423 ms</td><td>47.243 ms</td><td>3000.0000</td><td>1000.0000</td><td>19778.61 KB</td>
+</tr><tr><td>SelectSingleHierarchyType</td><td>1000</td><td>TpcDatabaseContext</td><td>2.714 ms</td><td>0.0859 ms</td><td>0.2337 ms</td><td>2.656 ms</td><td>-</td><td>-</td><td>766.39 KB</td>
+</tr><tr><td>SelectSingleHierarchyType</td><td>1000</td><td>TphDatabaseContext</td><td>2.520 ms</td><td>0.0640 ms</td><td>0.1784 ms</td><td>2.469 ms</td><td>-</td><td>-</td><td>804.23 KB</td>
+</tr><tr><td>SelectSingleHierarchyType</td><td>1000</td><td>TptDatabaseContext</td><td>3.116 ms</td><td>0.0779 ms</td><td>0.2170 ms</td><td>3.099 ms</td><td>-</td><td>-</td><td>945.09 KB</td>
+</tr><tr><td>SelectSingleHierarchyType</td><td>10000</td><td>TpcDatabaseContext</td><td>17.891 ms</td><td>0.3475 ms</td><td>0.5512 ms</td><td>17.878 ms</td><td>1000.0000</td><td>-</td><td>7254.95 KB</td>
+</tr><tr><td>SelectSingleHierarchyType</td><td>10000</td><td>TphDatabaseContext</td><td>18.465 ms</td><td>0.3687 ms</td><td>0.5404 ms</td><td>18.340 ms</td><td>1000.0000</td><td>-</td><td>7453.77 KB</td>
+</tr><tr><td>SelectSingleHierarchyType</td><td>10000</td><td>TptDatabaseContext</td><td>26.190 ms</td><td>0.5171 ms</td><td>0.9713 ms</td><td>26.412 ms</td><td>1000.0000</td><td>-</td><td>9289.87 KB</td>
+</tr></tbody></table>
+</body>
+</html>
