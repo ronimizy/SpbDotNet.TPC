@@ -2,6 +2,18 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ronimizy.SpbDotNet.TPC.Model", "ronimizy.SpbDotNet.TPC.Model\ronimizy.SpbDotNet.TPC.Model.csproj", "{E33102BA-5A52-4946-9475-3405C007CFEE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ronimizy.SpbDotNet.TPC.DataAccess", "ronimizy.SpbDotNet.TPC.DataAccess\ronimizy.SpbDotNet.TPC.DataAccess.csproj", "{A838090D-C64E-4B51-AE98-809B3ADF99E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ronimizy.SpbDotNet.TPC.Tests", "ronimizy.SpbDotNet.TPC.Tests\ronimizy.SpbDotNet.TPC.Tests.csproj", "{7055723F-2F93-4066-AAEC-7CA86C698297}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ronimizy.SpbDotNet.TPC.Playground", "ronimizy.SpbDotNet.TPC.Playground\ronimizy.SpbDotNet.TPC.Playground.csproj", "{E336DE14-5510-46A7-86C6-279B5B7A265B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ronimizy.SpbDotNet.TPC.Application", "ronimizy.SpbDotNet.TPC.Application\ronimizy.SpbDotNet.TPC.Application.csproj", "{254DB296-3A28-494B-906A-2AEF9F92D297}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ronimizy.SpbDotNet.TPC.Benchmark", "ronimizy.SpbDotNet.TPC.Benchmark\ronimizy.SpbDotNet.TPC.Benchmark.csproj", "{BBED7AB5-EF40-40ED-913B-111DDD4616B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ronimizy.SpbDotNet.TPC.Common", "ronimizy.SpbDotNet.TPC.Common\ronimizy.SpbDotNet.TPC.Common.csproj", "{9018ABF8-2E4C-4F36-9CE6-A75A2BB667FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +24,29 @@ Global
 		{E33102BA-5A52-4946-9475-3405C007CFEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E33102BA-5A52-4946-9475-3405C007CFEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E33102BA-5A52-4946-9475-3405C007CFEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A838090D-C64E-4B51-AE98-809B3ADF99E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A838090D-C64E-4B51-AE98-809B3ADF99E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A838090D-C64E-4B51-AE98-809B3ADF99E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A838090D-C64E-4B51-AE98-809B3ADF99E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7055723F-2F93-4066-AAEC-7CA86C698297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7055723F-2F93-4066-AAEC-7CA86C698297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7055723F-2F93-4066-AAEC-7CA86C698297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7055723F-2F93-4066-AAEC-7CA86C698297}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E336DE14-5510-46A7-86C6-279B5B7A265B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E336DE14-5510-46A7-86C6-279B5B7A265B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E336DE14-5510-46A7-86C6-279B5B7A265B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E336DE14-5510-46A7-86C6-279B5B7A265B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{254DB296-3A28-494B-906A-2AEF9F92D297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{254DB296-3A28-494B-906A-2AEF9F92D297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{254DB296-3A28-494B-906A-2AEF9F92D297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{254DB296-3A28-494B-906A-2AEF9F92D297}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBED7AB5-EF40-40ED-913B-111DDD4616B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBED7AB5-EF40-40ED-913B-111DDD4616B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBED7AB5-EF40-40ED-913B-111DDD4616B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBED7AB5-EF40-40ED-913B-111DDD4616B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9018ABF8-2E4C-4F36-9CE6-A75A2BB667FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9018ABF8-2E4C-4F36-9CE6-A75A2BB667FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9018ABF8-2E4C-4F36-9CE6-A75A2BB667FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9018ABF8-2E4C-4F36-9CE6-A75A2BB667FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
