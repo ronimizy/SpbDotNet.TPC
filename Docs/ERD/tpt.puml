@@ -1,0 +1,97 @@
+@startuml
+
+hide circle
+hide methods
+skinparam linetype ortho
+
+entity Employees
+{
+    Id: uuid
+    **UserId: uuid**
+    **ManagerId: uuid**
+}
+
+entity Intern
+{
+    **Id: uuid**
+    InternshipExpiration: datetime
+}
+
+entity Manager
+{
+    **Id: uuid**
+}
+
+entity Subordinate
+{
+    **Id: uuid**
+}
+
+entity ProjectClients
+{
+    **ProjectsId: uuid**
+    **ClientsId: uuid**
+}
+
+entity ProjectItems
+{
+    Id: uuid
+    Name: text
+    **ProjectId: uuid**
+    **ParentId: uuid**
+}
+
+entity ProjectItemSupervisors
+{
+    **SupervisedItemId: uuid**
+    **SupervisorsId: uuid**
+}
+
+entity Projects
+{
+    Id: uuid
+    Name: text
+}
+
+entity ProjectStages
+{
+    **Id: uuid**
+}
+
+entity ProjectTask
+{
+    **Id: uuid**
+    StartDate: datetime
+    EndDate: datetime
+    **ExecutorId: uuid**
+    Description: text
+}
+
+entity Users
+{
+    Id: uuid
+    Name: text
+}
+
+Users "1" - "1" Employees
+Employees "0..N" -- "0/1" Manager
+
+Employees "1" -- "1" Manager
+Employees "1" -r- "1" Subordinate
+Subordinate "1" -- "1" Intern
+
+ProjectItems "1" -up- "1" ProjectStages
+ProjectItems "1" -- "1" ProjectTask
+
+ProjectItems "0..N" -up- "0/1" ProjectStages
+ProjectItems "0..N" -- "1" Projects
+
+ProjectTask "0..N" -- "0/1" Employees
+
+Projects "0..N" -- "0..N" Employees
+(Projects, Employees) .. ProjectClients
+
+ProjectItems "0..N" -- "0..N" Employees
+(ProjectItems, Employees) .. ProjectItemSupervisors
+
+@enduml
