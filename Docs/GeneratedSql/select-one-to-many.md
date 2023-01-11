@@ -23,7 +23,7 @@ FROM (SELECT p0."Id",
              NULL           AS "StartDate",
              'ProjectStage' AS "Discriminator"
       FROM "ProjectStage" AS p0
-      
+
       UNION ALL
       SELECT p1."Id",
              p1."Name",
