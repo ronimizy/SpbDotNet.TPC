@@ -20,7 +20,7 @@ public class EmployeeService
 
     public async Task<Employee> CreateEmployeeAsync(User user)
     {
-        var employee = GenerateEmployee(user);
+        var employee = GenerateEmployee(user, 0);
 
         _context.Employees.Add(employee);
         await _context.SaveChangesAsync();
@@ -50,6 +50,9 @@ public class EmployeeService
 
     public async Task<IReadOnlyCollection<Intern>> GetInternsAsync()
         => await _context.Employees.OfType<Intern>().ToListAsync();
+    
+    public async Task<IReadOnlyCollection<Manager>> GetManagersAsync()
+        => await _context.Employees.OfType<Manager>().ToListAsync();
 
     public async Task<Manager> LoadFirstManagerWithEmployees()
     {
@@ -87,11 +90,9 @@ public class EmployeeService
         return employees;
     }
 
-    private Employee GenerateEmployee(User user)
+    private static Employee GenerateEmployee(User user, int index)
     {
-        var number = _faker.Random.Int(0, 2);
-
-        Employee employee = number switch
+        Employee employee = (index % 3) switch
         {
             0 => EntityGenerator.InternGenerator.Generate(),
             1 => EntityGenerator.SubordinateGenerator.Generate(),

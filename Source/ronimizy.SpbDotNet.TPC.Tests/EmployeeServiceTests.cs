@@ -135,6 +135,28 @@ public class EmployeeServiceTests : TestBase
 
         actualEmployees.Count.Should().Be(count);
     }
+    
+    [Theory]
+    [ClassData(typeof(ContextFactoryGeneratorAdapter))]
+    public async Task GetManagersAsync_Should_GetAllManagers(IContextFactory factory)
+    {
+        // Arrange
+        await using DisposableContext<DatabaseContextBase> context = await factory.BuildAsync(_configurator);
+
+        var userService = new UserService(context.Context);
+        var employeeService = new EmployeeService(context.Context, _faker);
+
+        IReadOnlyCollection<User> users = await userService.AddUsersAsync(10);
+        IReadOnlyCollection<Employee> employees = await employeeService.CreateEmployeesAsync(users);
+
+        // Act
+        IReadOnlyCollection<Employee> actualEmployees = await employeeService.GetManagersAsync();
+
+        // Assert
+        var count = employees.OfType<Manager>().Count();
+
+        actualEmployees.Count.Should().Be(count);
+    }
 
     [Theory]
     [ClassData(typeof(ContextFactoryGeneratorAdapter))]

@@ -32,7 +32,7 @@ public class ProjectService
     public async Task PopulateProjectAsync(Project project, int itemCount)
     {
         ProjectItem[] items = Enumerable.Range(0, itemCount)
-            .Select(_ => GenerateProjectItem(project))
+            .Select(i => GenerateProjectItem(project, i))
             .ToArray();
 
         ProjectStage[] stages = items.OfType<ProjectStage>().ToArray();
@@ -94,11 +94,9 @@ public class ProjectService
             .ToListAsync();
     }
 
-    private ProjectItem GenerateProjectItem(Project project)
+    private static ProjectItem GenerateProjectItem(Project project, int index)
     {
-        var number = _faker.Random.Int(0, 1);
-
-        ProjectItem item = number switch
+        ProjectItem item = (index % 2) switch
         {
             0 => EntityGenerator.ProjectTaskGenerator.Generate(),
             1 => EntityGenerator.ProjectStageGenerator.Generate(),

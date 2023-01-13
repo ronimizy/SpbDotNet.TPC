@@ -10,7 +10,7 @@ public class QueryBenchmark : BenchmarkBase
     private EmployeeService _service = default!;
     private Faker _faker = default!;
 
-    [Params(1000, 10_000)]
+    [Params(1000, 10_000, 100_000)]
     public int Size { get; set; }
 
     [IterationSetup(Targets = new[]

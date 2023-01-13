@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>ronimizy.SpbDotNet.TPC.Benchmarks.Benchmarks.SingleInsertBenchmark-20230108-180337</title>
+<title>ronimizy.SpbDotNet.TPC.Benchmarks.Benchmarks.SingleInsertBenchmark-20230112-014123</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -17,17 +17,17 @@ BenchmarkDotNet=v0.13.3, OS=macOS 13.0 (22A380) [Darwin 22.1.0]
 Apple M1 Pro, 1 CPU, 10 logical and 10 physical cores
 .NET SDK=7.0.101
   [Host]     : .NET 7.0.1 (7.0.122.56804), Arm64 RyuJIT AdvSIMD
-  Job-FNHWWV : .NET 7.0.1 (7.0.122.56804), Arm64 RyuJIT AdvSIMD
+  Job-QORJXR : .NET 7.0.1 (7.0.122.56804), Arm64 RyuJIT AdvSIMD
 </code></pre>
 <pre><code>InvocationCount=1  UnrollFactor=1  
 </code></pre>
 
 <table>
-<thead><tr><th>    Method</th><th>     Factory</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Median</th><th>Allocated</th>
+<thead><tr><th>    Method</th><th>     Factory</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>SingleUserInsert</td><td>TpcDatabaseContext</td><td>1.684 ms</td><td>0.0776 ms</td><td>0.2202 ms</td><td>1.641 ms</td><td>40.3 KB</td>
-</tr><tr><td>SingleUserInsert</td><td>TphDatabaseContext</td><td>1.754 ms</td><td>0.0623 ms</td><td>0.1736 ms</td><td>1.744 ms</td><td>38.55 KB</td>
-</tr><tr><td>SingleUserInsert</td><td>TptDatabaseContext</td><td>1.718 ms</td><td>0.0622 ms</td><td>0.1754 ms</td><td>1.662 ms</td><td>38.93 KB</td>
+</thead><tbody><tr><td>SingleUserInsert</td><td>TpcDatabaseContext</td><td>1.536 ms</td><td>0.0468 ms</td><td>0.1329 ms</td><td>40.42 KB</td>
+</tr><tr><td>SingleUserInsert</td><td>TphDatabaseContext</td><td>1.632 ms</td><td>0.0536 ms</td><td>0.1555 ms</td><td>38.2 KB</td>
+</tr><tr><td>SingleUserInsert</td><td>TptDatabaseContext</td><td>1.574 ms</td><td>0.0418 ms</td><td>0.1200 ms</td><td>39.49 KB</td>
 </tr></tbody></table>
 </body>
 </html>

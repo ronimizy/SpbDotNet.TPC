@@ -1,5 +1,6 @@
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Order;
+using Bogus;
 using ronimizy.SpbDotNet.TPC.Common.ContextGeneration;
 using ronimizy.SpbDotNet.TPC.Common.Contexts;
 using ronimizy.SpbDotNet.TPC.DataAccess.Contexts;
@@ -33,6 +34,7 @@ public abstract class BenchmarkBase
     public virtual void Setup()
     {
         Context = Factory.BuildAsync(_configurator).GetAwaiter().GetResult();
+        Randomizer.Seed = new Random(101);
     }
 
     [IterationCleanup]
