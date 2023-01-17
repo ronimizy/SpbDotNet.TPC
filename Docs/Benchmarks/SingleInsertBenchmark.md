@@ -1,16 +1,16 @@
 ``` ini
 
-BenchmarkDotNet=v0.13.3, OS=macOS 13.0 (22A380) [Darwin 22.1.0]
-Apple M1 Pro, 1 CPU, 10 logical and 10 physical cores
-.NET SDK=7.0.101
-  [Host]     : .NET 7.0.1 (7.0.122.56804), Arm64 RyuJIT AdvSIMD
-  Job-QORJXR : .NET 7.0.1 (7.0.122.56804), Arm64 RyuJIT AdvSIMD
+BenchmarkDotNet=v0.13.3, OS=Windows 10 (10.0.19044.2486/21H2/November2021Update)
+Unknown processor
+.NET SDK=7.0.100
+  [Host]     : .NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2
+  Job-SKVIAV : .NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2
 
 InvocationCount=1  UnrollFactor=1  
 
 ```
-|           Method |            Factory |     Mean |     Error |    StdDev | Allocated |
-|----------------- |------------------- |---------:|----------:|----------:|----------:|
-| SingleUserInsert | TpcDatabaseContext | 1.536 ms | 0.0468 ms | 0.1329 ms |  40.42 KB |
-| SingleUserInsert | TphDatabaseContext | 1.632 ms | 0.0536 ms | 0.1555 ms |   38.2 KB |
-| SingleUserInsert | TptDatabaseContext | 1.574 ms | 0.0418 ms | 0.1200 ms |  39.49 KB |
+| Strategy |     Mean |     Error |    StdDev | Allocated |
+|----------|---------:|----------:|----------:|----------:|
+| Tpc      | 1.401 ms | 0.0379 ms | 0.1087 ms |  38.59 KB |
+| Tph      | 1.321 ms | 0.0401 ms | 0.1162 ms |  38.23 KB |
+| Tpt      | 1.468 ms | 0.0475 ms | 0.1370 ms |  38.23 KB |

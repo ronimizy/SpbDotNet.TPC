@@ -12,11 +12,15 @@ public class ProjectService
 {
     private readonly DatabaseContextBase _context;
     private readonly Faker _faker;
+    private readonly Faker<ProjectTask> _projectTaskGenerator;
+    private readonly Faker<ProjectStage> _projectStageGenerator;
 
     public ProjectService(DatabaseContextBase context, Faker faker)
     {
         _context = context;
         _faker = faker;
+        _projectTaskGenerator = EntityGenerator.ProjectTaskGenerator;
+        _projectStageGenerator = EntityGenerator.ProjectStageGenerator;
     }
 
     public async Task<Project> CreateProjectAsync()
@@ -94,13 +98,13 @@ public class ProjectService
             .ToListAsync();
     }
 
-    private static ProjectItem GenerateProjectItem(Project project, int index)
+    private ProjectItem GenerateProjectItem(Project project, int index)
     {
         ProjectItem item = (index % 2) switch
         {
-            0 => EntityGenerator.ProjectTaskGenerator.Generate(),
-            1 => EntityGenerator.ProjectStageGenerator.Generate(),
-            _ => EntityGenerator.ProjectTaskGenerator.Generate(),
+            0 => _projectTaskGenerator.Generate(),
+            1 => _projectStageGenerator.Generate(),
+            _ => _projectTaskGenerator.Generate(),
         };
 
         item.Project = project;

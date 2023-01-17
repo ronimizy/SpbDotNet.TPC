@@ -18,4 +18,8 @@
       <ProjectReference Include="..\ronimizy.SpbDotNet.TPC.Common\ronimizy.SpbDotNet.TPC.Common.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="BenchmarkDotNet.Artifacts" />
+    </ItemGroup>
+
 </Project>

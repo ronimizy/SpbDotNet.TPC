@@ -11,11 +11,18 @@ public class EmployeeService
 {
     private readonly DatabaseContextBase _context;
     private readonly Faker _faker;
+    private readonly Faker<Intern> _internGenerator;
+    private readonly Faker<Subordinate> _subordinateGenerator;
+    private readonly Faker<Manager> _managerGenerator;
 
     public EmployeeService(DatabaseContextBase context, Faker faker)
     {
         _context = context;
         _faker = faker;
+        
+        _internGenerator = EntityGenerator.InternGenerator;
+        _subordinateGenerator = EntityGenerator.SubordinateGenerator;
+        _managerGenerator = EntityGenerator.ManagerGenerator;
     }
 
     public async Task<Employee> CreateEmployeeAsync(User user)
@@ -90,14 +97,14 @@ public class EmployeeService
         return employees;
     }
 
-    private static Employee GenerateEmployee(User user, int index)
+    private Employee GenerateEmployee(User user, int index)
     {
         Employee employee = (index % 3) switch
         {
-            0 => EntityGenerator.InternGenerator.Generate(),
-            1 => EntityGenerator.SubordinateGenerator.Generate(),
-            2 => EntityGenerator.ManagerGenerator.Generate(),
-            _ => EntityGenerator.InternGenerator.Generate(),
+            0 => _internGenerator.Generate(),
+            1 => _subordinateGenerator.Generate(),
+            2 => _managerGenerator.Generate(),
+            _ => _internGenerator.Generate(),
         };
 
         employee.User = user;

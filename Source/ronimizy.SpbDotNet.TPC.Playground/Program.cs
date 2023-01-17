@@ -4,7 +4,6 @@ using Bogus;
 using Microsoft.EntityFrameworkCore;
 using ronimizy.SpbDotNet.TPC.Application.Services;
 using ronimizy.SpbDotNet.TPC.DataAccess.Contexts;
-using ronimizy.SpbDotNet.TPC.Model.Employees;
 using ronimizy.SpbDotNet.TPC.Model.Users;
 
 // var sql = """
@@ -21,22 +20,29 @@ using ronimizy.SpbDotNet.TPC.Model.Users;
 
 Randomizer.Seed = new Random(101);
 
-var builder = new DbContextOptionsBuilder<TptDatabaseContext>()
-    .UseNpgsql("Host=localhost;Port=5554;Database=postgres;Username=postgres;Password=postgres");
+await InitDatabase<TphDatabaseContext>();
 
-await using var context = new TptDatabaseContext(builder.Options);
+async Task InitDatabase<T>() where T : DatabaseContextBase, IContextOptionsCreatable<T>
+{
+    DbContextOptionsBuilder<T> builder = new DbContextOptionsBuilder<T>()
+        .UseNpgsql("Host=localhost;Port=5554;Database=postgres;Username=postgres;Password=postgres");
 
-await context.Database.EnsureCreatedAsync();
+    await using var context = T.Create(builder.Options);
 
-var faker = new Faker();
+    await context.Database.EnsureCreatedAsync();
 
-var userService = new UserService(context);
-var employeeService = new EmployeeService(context, faker);
-var projectService = new ProjectService(context, faker);
+    var faker = new Faker();
 
-IReadOnlyCollection<User> users = await userService.AddUsersAsync(10);
-IReadOnlyCollection<Employee> employees = await employeeService.CreateEmployeesAsync(users);
+    var userService = new UserService(context);
+    var employeeService = new EmployeeService(context, faker);
+    var projectService = new ProjectService(context, faker);
+    var employeeUniformService = new EmployeeUniformService(context);
 
-var project = await projectService.CreateProjectAsync();
-await projectService.PopulateProjectAsync(project, 20);
+    IReadOnlyCollection<User> users = await userService.AddUsersAsync(10);
+    await employeeService.CreateEmployeesAsync(users);
 
+    var project = await projectService.CreateProjectAsync();
+    await projectService.PopulateProjectAsync(project, 20);
+
+    await employeeUniformService.AddEmployeeUniformsAsync(100);
+}

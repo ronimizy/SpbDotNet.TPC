@@ -10,8 +10,7 @@ public class ContextFactory<T> : IContextFactory where T : DatabaseContextBase
 {
     private readonly Func<DbContextOptions<T>, T> _factory;
 
-    public ContextFactory(
-        Func<DbContextOptions<T>, T> factory)
+    public ContextFactory(Func<DbContextOptions<T>, T> factory)
     {
         _factory = factory;
     }

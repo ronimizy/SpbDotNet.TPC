@@ -1,40 +1,49 @@
 ``` ini
 
-BenchmarkDotNet=v0.13.3, OS=macOS 13.0 (22A380) [Darwin 22.1.0]
-Apple M1 Pro, 1 CPU, 10 logical and 10 physical cores
-.NET SDK=7.0.101
-  [Host]     : .NET 7.0.1 (7.0.122.56804), Arm64 RyuJIT AdvSIMD
-  Job-QORJXR : .NET 7.0.1 (7.0.122.56804), Arm64 RyuJIT AdvSIMD
+BenchmarkDotNet=v0.13.3, OS=Windows 10 (10.0.19044.2486/21H2/November2021Update)
+Unknown processor
+.NET SDK=7.0.100
+  [Host]     : .NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2
+  Job-SKVIAV : .NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2
 
 InvocationCount=1  UnrollFactor=1  
 
 ```
 ## Select full hierarchy (Employees)
-| Size  | Strategy |      Mean |     Error |    StdDev |    Median |      Gen0 |      Gen1 |   Allocated |
-|-------|----------|----------:|----------:|----------:|----------:|----------:|----------:|------------:|
-| 1000  | Tpc      |  4.339 ms | 0.0863 ms | 0.1599 ms |  4.326 ms |         - |         - |  2188.09 KB |
-| 1000  | Tph      |  4.275 ms | 0.0830 ms | 0.1020 ms |  4.279 ms |         - |         - |  2177.10 KB |
-| 1000  | Tpt      |  7.182 ms | 0.1429 ms | 0.1908 ms |  7.149 ms |         - |         - |  3278.68 KB |
-| 10000 | Tpc      | 44.943 ms | 0.7141 ms | 0.6680 ms | 45.054 ms | 3000.0000 |         - | 21818.66 KB |
-| 10000 | Tph      | 48.507 ms | 0.9382 ms | 1.0039 ms | 48.196 ms | 3000.0000 |         - | 21713.93 KB |
-| 10000 | Tpt      | 77.906 ms | 0.6561 ms | 0.5816 ms | 77.911 ms | 5000.0000 | 1000.0000 | 32667.91 KB |
+| Size   | Strategy           |         Mean |      Error |     StdDev |       Gen0 |       Gen1 |    Allocated |
+|--------|--------------------|-------------:|-----------:|-----------:|-----------:|-----------:|-------------:|
+| 1000   | TpcDatabaseContext |     6.199 ms |  0.1068 ms |  0.0892 ms |          - |          - |    2188.1 KB |
+| 1000   | TphDatabaseContext |     5.362 ms |  0.0978 ms |  0.0867 ms |          - |          - |   2177.38 KB |
+| 1000   | TptDatabaseContext |     9.243 ms |  0.1387 ms |  0.1297 ms |          - |          - |    3278.7 KB |
+| 10000  | TpcDatabaseContext |    64.446 ms |  0.8411 ms |  0.7456 ms |  2000.0000 |          - |  21818.68 KB |
+| 10000  | TphDatabaseContext |    64.956 ms |  0.5129 ms |  0.4547 ms |  2000.0000 |          - |  21713.93 KB |
+| 10000  | TptDatabaseContext |   107.527 ms |  1.5636 ms |  1.4626 ms |  3000.0000 |          - |  32666.66 KB |
+| 100000 | TpcDatabaseContext |   886.714 ms | 13.8826 ms | 12.9858 ms | 25000.0000 |  9000.0000 | 216452.23 KB |
+| 100000 | TphDatabaseContext |   830.209 ms |  7.9624 ms |  7.0584 ms | 24000.0000 |  9000.0000 | 215409.34 KB |
+| 100000 | TptDatabaseContext | 1,351.630 ms |  6.0282 ms |  5.3439 ms | 37000.0000 | 13000.0000 | 326009.68 KB |
 
-## Select hierarchy slice (Subordinates)
-| Size  | Strategy |      Mean |     Error |    StdDev |    Median |      Gen0 | Gen1 |   Allocated |
-|-------|----------|----------:|----------:|----------:|----------:|----------:|-----:|------------:|
-| 1000  | Tpc      |  2.971 ms | 0.0592 ms | 0.1485 ms |  2.949 ms |         - |    - |  1126.05 KB |
-| 1000  | Tph      |  2.747 ms | 0.0637 ms | 0.1764 ms |  2.709 ms |         - |    - |  1118.02 KB |
-| 1000  | Tpt      |  4.810 ms | 0.0949 ms | 0.1662 ms |  4.785 ms |         - |    - |  2004.34 KB |
-| 10000 | Tpc      | 23.294 ms | 0.4460 ms | 0.4172 ms | 23.270 ms | 1000.0000 |    - | 11124.19 KB |
-| 10000 | Tph      | 20.923 ms | 0.4111 ms | 0.3846 ms | 20.941 ms | 1000.0000 |    - | 11045.84 KB |
-| 10000 | Tpt      | 42.824 ms | 0.8393 ms | 1.1766 ms | 43.185 ms | 3000.0000 |    - | 19853.09 KB |
+## Select hierarchy slice (Subordinates)    
+| Size   | Strategy           |       Mean |     Error |    StdDev |       Gen0 |      Gen1 |    Allocated |
+|--------|--------------------|-----------:|----------:|----------:|-----------:|----------:|-------------:|
+| 1000   | TpcDatabaseContext |   2.830 ms | 0.0556 ms | 0.0662 ms |          - |         - |   1126.34 KB |
+| 1000   | TphDatabaseContext |   2.573 ms | 0.0394 ms | 0.0369 ms |          - |         - |   1118.02 KB |
+| 1000   | TptDatabaseContext |   5.309 ms | 0.0905 ms | 0.0803 ms |          - |         - |   2004.35 KB |
+| 10000  | TpcDatabaseContext |  26.750 ms | 0.4101 ms | 0.3635 ms |  1000.0000 |         - |   11124.2 KB |
+| 10000  | TphDatabaseContext |  26.455 ms | 0.5130 ms | 0.4799 ms |  1000.0000 |         - |  11045.84 KB |
+| 10000  | TptDatabaseContext |  56.595 ms | 0.7952 ms | 0.7050 ms |  2000.0000 |         - |  19853.11 KB |
+| 100000 | TpcDatabaseContext | 281.489 ms | 4.8938 ms | 6.6986 ms | 12000.0000 | 5000.0000 | 111502.07 KB |
+| 100000 | TphDatabaseContext | 283.441 ms | 4.8120 ms | 4.5012 ms | 12000.0000 | 5000.0000 | 110720.59 KB |
+| 100000 | TptDatabaseContext | 578.619 ms | 6.0911 ms | 5.3996 ms | 22000.0000 | 7000.0000 | 197982.64 KB |
 
 ## Select single hierarchy type (Interns)
-| Size  | Strategy |      Mean |     Error |    StdDev |    Median |      Gen0 | Gen1 |   Allocated |
-|-------|----------|----------:|----------:|----------:|----------:|----------:|-----:|------------:|
-| 1000  | Tpc      |  2.071 ms | 0.0395 ms | 0.0908 ms |  2.082 ms |         - |    - |   582.63 KB |
-| 1000  | Tph      |  2.037 ms | 0.0471 ms | 0.1329 ms |  2.015 ms |         - |    - |   593.11 KB |
-| 1000  | Tpt      |  3.038 ms | 0.0607 ms | 0.1579 ms |  3.024 ms |         - |    - |  1129.41 KB |
-| 10000 | Tpc      |  8.030 ms | 0.1380 ms | 0.1889 ms |  7.990 ms |         - |    - |  5725.94 KB |
-| 10000 | Tph      |  8.215 ms | 0.1610 ms | 0.2506 ms |  8.147 ms |         - |    - |  5830.16 KB |
-| 10000 | Tpt      | 26.126 ms | 0.5221 ms | 1.4641 ms | 26.791 ms | 1000.0000 |    - | 11164.36 KB |
+| Size   | Strategy           |       Mean |     Error |    StdDev |       Gen0 |      Gen1 |    Allocated |
+|--------|--------------------|-----------:|----------:|----------:|-----------:|----------:|-------------:|
+| 1000   | TpcDatabaseContext |   1.662 ms | 0.0329 ms | 0.0657 ms |          - |         - |    582.63 KB |
+| 1000   | TphDatabaseContext |   1.713 ms | 0.0336 ms | 0.0524 ms |          - |         - |    593.11 KB |
+| 1000   | TptDatabaseContext |   3.102 ms | 0.0416 ms | 0.0368 ms |          - |         - |   1129.42 KB |
+| 10000  | TpcDatabaseContext |  10.855 ms | 0.1521 ms | 0.1270 ms |          - |         - |   5725.94 KB |
+| 10000  | TphDatabaseContext |  11.105 ms | 0.2126 ms | 0.2363 ms |          - |         - |   5830.16 KB |
+| 10000  | TptDatabaseContext |  29.662 ms | 0.5854 ms | 0.6264 ms |  1000.0000 |         - |  11164.37 KB |
+| 100000 | TpcDatabaseContext | 136.726 ms | 2.4530 ms | 2.1745 ms |  6000.0000 | 3000.0000 |  57374.23 KB |
+| 100000 | TphDatabaseContext | 135.878 ms | 2.1584 ms | 1.9134 ms |  6000.0000 | 3000.0000 |  58416.23 KB |
+| 100000 | TptDatabaseContext | 301.354 ms | 3.7479 ms | 3.3224 ms | 12000.0000 | 4000.0000 | 111255.02 KB |

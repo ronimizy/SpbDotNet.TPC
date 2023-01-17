@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ronimizy.SpbDotNet.TPC.Model.Employees;
+using ronimizy.SpbDotNet.TPC.Model.EmployeeUniforms;
 using ronimizy.SpbDotNet.TPC.Model.ProjectItems;
 using ronimizy.SpbDotNet.TPC.Model.Projects;
 using ronimizy.SpbDotNet.TPC.Model.Users;
@@ -14,6 +15,8 @@ public abstract class DatabaseContextBase : DbContext
     public DbSet<Project> Projects => Set<Project>();
     public DbSet<ProjectItem> ProjectItems => Set<ProjectItem>();
     public DbSet<Employee> Employees => Set<Employee>();
+    
+    public DbSet<EmployeeUniform> EmployeeUniforms => Set<EmployeeUniform>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
         => modelBuilder.ApplyConfigurationsFromAssembly(typeof(IAssemblyMarker).Assembly);

@@ -9,15 +9,17 @@ namespace ronimizy.SpbDotNet.TPC.Application.Services;
 public class UserService
 {
     private readonly DatabaseContextBase _context;
+    private readonly Faker<User> _userGenerator;
 
     public UserService(DatabaseContextBase context)
     {
         _context = context;
+        _userGenerator = EntityGenerator.UserGenerator;
     }
 
     public async Task<User> AddUserAsync()
     {
-        var user = EntityGenerator.UserGenerator.Generate();
+        var user = _userGenerator.Generate();
 
         _context.Users.Add(user);
         await _context.SaveChangesAsync();
@@ -27,7 +29,7 @@ public class UserService
 
     public async Task<IReadOnlyCollection<User>> AddUsersAsync(int count)
     {
-        List<User> users = EntityGenerator.UserGenerator.Generate(count);
+        List<User> users = _userGenerator.Generate(count);
 
         _context.Users.AddRange(users);
         await _context.SaveChangesAsync();
