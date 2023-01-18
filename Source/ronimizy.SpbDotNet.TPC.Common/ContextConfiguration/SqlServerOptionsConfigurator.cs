@@ -12,4 +12,9 @@ public class SqlServerOptionsConfigurator : IContextOptionsConfigurator
 
     public DbContextOptionsBuilder<T> Configure<T>(DbContextOptionsBuilder<T> builder) where T : DbContext
         => builder.UseSqlServer("");
+
+    public Task ResetAsync(DbContext context)
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -2,6 +2,7 @@ using DotNet.Testcontainers.Builders;
 using DotNet.Testcontainers.Configurations;
 using DotNet.Testcontainers.Containers;
 using Microsoft.EntityFrameworkCore;
+using ronimizy.SpbDotNet.TPC.DataAccess.Contexts;
 
 namespace ronimizy.SpbDotNet.TPC.Common.ContextConfiguration;
 
@@ -34,4 +35,21 @@ public class PgContainerOptionsConfigurator : IContextOptionsConfigurator
 
     public DbContextOptionsBuilder<T> Configure<T>(DbContextOptionsBuilder<T> builder) where T : DbContext
         => builder.UseNpgsql(_container.ConnectionString).EnableSensitiveDataLogging();
+
+    public async Task ResetAsync(DbContext context)
+    {
+        await context.Database.ExecuteSqlRawAsync("""
+
+
+
+DROP SCHEMA public CASCADE;
+CREATE SCHEMA public;
+
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO public;
+
+
+
+""");
+    }
 }

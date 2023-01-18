@@ -26,7 +26,7 @@ public class ContextFactory<T> : IContextFactory where T : DatabaseContextBase
         var context = _factory.Invoke(builder.Options);
         await context.Database.EnsureCreatedAsync();
 
-        return new DisposableContext<DatabaseContextBase>(context);
+        return new DisposableContext<DatabaseContextBase>(context, configurator);
     }
 
     public override string ToString()
