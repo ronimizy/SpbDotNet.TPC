@@ -1,6 +1,7 @@
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Order;
 using Bogus;
+using ronimizy.SpbDotNet.TPC.Common.ContextConfiguration;
 using ronimizy.SpbDotNet.TPC.Common.ContextGeneration;
 using ronimizy.SpbDotNet.TPC.Common.Contexts;
 using ronimizy.SpbDotNet.TPC.DataAccess.Contexts;
@@ -11,7 +12,7 @@ namespace ronimizy.SpbDotNet.TPC.Benchmarks.Benchmarks;
 [Orderer(SummaryOrderPolicy.Method)]
 public abstract class BenchmarkBase
 {
-    private ContextOptionsConfigurator _configurator = default!;
+    private IContextOptionsConfigurator _configurator = default!;
     protected DisposableContext<DatabaseContextBase> Context = default!;
 
     [ParamsSource(nameof(ContextFactorySource))]
@@ -22,7 +23,7 @@ public abstract class BenchmarkBase
     [GlobalSetup]
     public async Task GlobalSetup()
     {
-        _configurator = new ContextOptionsConfigurator();
+        _configurator = new PgContainerOptionsConfigurator();
         await _configurator.InitializeAsync();
     }
 

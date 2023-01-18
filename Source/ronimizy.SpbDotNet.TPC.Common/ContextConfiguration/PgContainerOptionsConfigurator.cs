@@ -2,11 +2,10 @@ using DotNet.Testcontainers.Builders;
 using DotNet.Testcontainers.Configurations;
 using DotNet.Testcontainers.Containers;
 using Microsoft.EntityFrameworkCore;
-using Xunit;
 
-namespace ronimizy.SpbDotNet.TPC.Common.ContextGeneration;
+namespace ronimizy.SpbDotNet.TPC.Common.ContextConfiguration;
 
-public class ContextOptionsConfigurator : IAsyncLifetime
+public class PgContainerOptionsConfigurator : IContextOptionsConfigurator
 {
     private const string User = "postgres";
     private const string Password = "postgres";
@@ -14,7 +13,7 @@ public class ContextOptionsConfigurator : IAsyncLifetime
 
     private readonly PostgreSqlTestcontainer _container;
 
-    public ContextOptionsConfigurator()
+    public PgContainerOptionsConfigurator()
     {
         _container = new TestcontainersBuilder<PostgreSqlTestcontainer>()
             .WithDatabase(new PostgreSqlTestcontainerConfiguration

@@ -2,6 +2,7 @@ using Bogus;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
 using ronimizy.SpbDotNet.TPC.Application.Services;
+using ronimizy.SpbDotNet.TPC.Common.ContextConfiguration;
 using ronimizy.SpbDotNet.TPC.Common.ContextGeneration;
 using ronimizy.SpbDotNet.TPC.Common.Contexts;
 using ronimizy.SpbDotNet.TPC.DataAccess.Contexts;
@@ -16,10 +17,10 @@ namespace ronimizy.SpbDotNet.TPC.Tests;
 [Collection(Constants.TestCollectionName)]
 public class EmployeeServiceTests : TestBase
 {
-    private readonly ContextOptionsConfigurator _configurator;
+    private readonly PgContainerOptionsConfigurator _configurator;
     private readonly Faker _faker;
 
-    public EmployeeServiceTests(ITestOutputHelper output, ContextOptionsConfigurator configurator) : base(output)
+    public EmployeeServiceTests(ITestOutputHelper output, PgContainerOptionsConfigurator configurator) : base(output)
     {
         _configurator = configurator;
 

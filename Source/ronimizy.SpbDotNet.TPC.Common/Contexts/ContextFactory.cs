@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using ronimizy.SpbDotNet.TPC.Common.ContextConfiguration;
 using ronimizy.SpbDotNet.TPC.Common.ContextGeneration;
 using ronimizy.SpbDotNet.TPC.DataAccess.Contexts;
 using Serilog;
@@ -15,7 +16,7 @@ public class ContextFactory<T> : IContextFactory where T : DatabaseContextBase
         _factory = factory;
     }
 
-    public async Task<DisposableContext<DatabaseContextBase>> BuildAsync(ContextOptionsConfigurator configurator)
+    public async Task<DisposableContext<DatabaseContextBase>> BuildAsync(IContextOptionsConfigurator configurator)
     {
         var builder = new DbContextOptionsBuilder<T>();
         configurator.Configure(builder);

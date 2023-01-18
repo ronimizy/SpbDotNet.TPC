@@ -1,6 +1,7 @@
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
 using ronimizy.SpbDotNet.TPC.Application.Services;
+using ronimizy.SpbDotNet.TPC.Common.ContextConfiguration;
 using ronimizy.SpbDotNet.TPC.Common.ContextGeneration;
 using ronimizy.SpbDotNet.TPC.Common.Contexts;
 using ronimizy.SpbDotNet.TPC.DataAccess.Contexts;
@@ -13,9 +14,9 @@ namespace ronimizy.SpbDotNet.TPC.Tests;
 [Collection(Constants.TestCollectionName)]
 public class UserServiceTest : TestBase
 {
-    private readonly ContextOptionsConfigurator _configurator;
+    private readonly PgContainerOptionsConfigurator _configurator;
 
-    public UserServiceTest(ITestOutputHelper output, ContextOptionsConfigurator configurator) : base(output)
+    public UserServiceTest(ITestOutputHelper output, PgContainerOptionsConfigurator configurator) : base(output)
     {
         _configurator = configurator;
     }

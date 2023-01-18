@@ -1,3 +1,4 @@
+using ronimizy.SpbDotNet.TPC.Common.ContextConfiguration;
 using ronimizy.SpbDotNet.TPC.Common.ContextGeneration;
 using ronimizy.SpbDotNet.TPC.Common.Contexts;
 using ronimizy.SpbDotNet.TPC.DataAccess.Contexts;
@@ -10,9 +11,9 @@ namespace ronimizy.SpbDotNet.TPC.Tests;
 [Collection(Constants.TestCollectionName)]
 public class DatabaseContextTests : TestBase
 {
-    private readonly ContextOptionsConfigurator _configurator;
+    private readonly PgContainerOptionsConfigurator _configurator;
 
-    public DatabaseContextTests(ITestOutputHelper output, ContextOptionsConfigurator configurator) : base(output)
+    public DatabaseContextTests(ITestOutputHelper output, PgContainerOptionsConfigurator configurator) : base(output)
     {
         _configurator = configurator;
     }
