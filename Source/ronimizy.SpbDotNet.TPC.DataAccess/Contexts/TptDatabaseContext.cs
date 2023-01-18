@@ -7,7 +7,7 @@ namespace ronimizy.SpbDotNet.TPC.DataAccess.Contexts;
 
 public class TptDatabaseContext : DatabaseContextBase, IContextOptionsCreatable<TptDatabaseContext>
 {
-    public TptDatabaseContext(DbContextOptions<TptDatabaseContext> options) : base(options) { }
+    public TptDatabaseContext(DbContextOptions options) : base(options) { }
 
     public static TptDatabaseContext Create(DbContextOptions<TptDatabaseContext> options)
         => new TptDatabaseContext(options);

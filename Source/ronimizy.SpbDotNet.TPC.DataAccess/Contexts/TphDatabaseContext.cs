@@ -7,7 +7,7 @@ namespace ronimizy.SpbDotNet.TPC.DataAccess.Contexts;
 
 public class TphDatabaseContext : DatabaseContextBase, IContextOptionsCreatable<TphDatabaseContext>
 {
-    public TphDatabaseContext(DbContextOptions<TphDatabaseContext> options) : base(options) { }
+    public TphDatabaseContext(DbContextOptions options) : base(options) { }
 
     public static TphDatabaseContext Create(DbContextOptions<TphDatabaseContext> options)
         => new TphDatabaseContext(options);

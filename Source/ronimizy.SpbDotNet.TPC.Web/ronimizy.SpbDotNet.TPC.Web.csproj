@@ -1,23 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ronimizy.SpbDotNet.TPC.Model\ronimizy.SpbDotNet.TPC.Model.csproj" />
+      <ProjectReference Include="..\ronimizy.SpbDotNet.TPC.DataAccess\ronimizy.SpbDotNet.TPC.DataAccess.csproj" />
+      <ProjectReference Include="..\ronimizy.SpbDotNet.TPC.Migrations.TphToTpc\ronimizy.SpbDotNet.TPC.Migrations.TphToTpc.csproj" />
+      <ProjectReference Include="..\ronimizy.SpbDotNet.TPC.Migrations.TptToTpc\ronimizy.SpbDotNet.TPC.Migrations.TptToTpc.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.2" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.2">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.2" />
-      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.1" />
     </ItemGroup>
 
 </Project>
