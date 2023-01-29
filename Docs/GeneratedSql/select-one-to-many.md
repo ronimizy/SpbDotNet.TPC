@@ -42,9 +42,17 @@ WHERE p."Id" = ProjectId
 ### TPH
 
 ```postgresql
-SELECT p."Id", p."Discriminator", p."Name", p."ParentId", p."ProjectId", p."Description", p."EndDate", p."ExecutorId", p."StartDate"
+SELECT p."Id",
+       p."Discriminator",
+       p."Name",
+       p."ParentId",
+       p."ProjectId",
+       p."Description",
+       p."EndDate",
+       p."ExecutorId",
+       p."StartDate"
 FROM "ProjectItems" AS p
-INNER JOIN "Projects" AS p0 ON p."ProjectId" = p0."Id"
+         INNER JOIN "Projects" AS p0 ON p."ProjectId" = p0."Id"
 WHERE p0."Id" = ProjectId
 ```
 

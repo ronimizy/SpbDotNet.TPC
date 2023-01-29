@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using ronimizy.SpbDotNet.TPC.Model.Employees;
-using ronimizy.SpbDotNet.TPC.Model.EmployeeUniforms;
 using ronimizy.SpbDotNet.TPC.Model.ProjectItems;
 
 namespace ronimizy.SpbDotNet.TPC.DataAccess.Contexts;
@@ -16,15 +15,13 @@ public class TptDatabaseContext : DatabaseContextBase, IContextOptionsCreatable<
     {
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder.Entity<Intern>();
-        modelBuilder.Entity<Subordinate>();
+        modelBuilder.Entity<Employee>().ToTable("Employees");
+        modelBuilder.Entity<Manager>().ToTable("Managers");
+        modelBuilder.Entity<Subordinate>().ToTable("Subordinates");
+        modelBuilder.Entity<Intern>().ToTable("Interns");
 
-        modelBuilder.Entity<CasualEmployeeUniform>();
-        modelBuilder.Entity<OfficialEmployeeUniform>();
-        modelBuilder.Entity<DisplayEmployeeUniform>();
-
-        modelBuilder.Entity<ProjectItem>().UseTptMappingStrategy();
-        modelBuilder.Entity<Employee>().UseTptMappingStrategy();
-        modelBuilder.Entity<EmployeeUniform>().UseTptMappingStrategy();
+        modelBuilder.Entity<ProjectItem>().ToTable("ProjectItems");
+        modelBuilder.Entity<ProjectTask>().ToTable("ProjectTasks");
+        modelBuilder.Entity<ProjectStage>().ToTable("ProjectStages");
     }
 }

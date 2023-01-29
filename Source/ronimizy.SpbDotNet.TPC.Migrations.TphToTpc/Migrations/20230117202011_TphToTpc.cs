@@ -90,17 +90,17 @@ namespace ronimizy.SpbDotNet.TPC.Migrations.TphToTpc.Migrations
 
             migrationBuilder.Sql($"""
 insert into "Manager" ("Id", "UserId", "ManagerId")
-select "Id", "UserId", "ManagerId" from "Employees" where "Discriminator" = {1 << 3}
+select "Id", "UserId", "ManagerId" from "Employees" where "Discriminator" = 3
 """);
             
             migrationBuilder.Sql($"""
 insert into "Intern" ("Id", "UserId", "ManagerId", "InternshipExpiration")
-select "Id", "UserId", "ManagerId", "InternshipExpiration" from "Employees" where "Discriminator" = {1 << 1}
+select "Id", "UserId", "ManagerId", "InternshipExpiration" from "Employees" where "Discriminator" = 1
 """);
 
             migrationBuilder.Sql($"""
 insert into "ProjectStage" ("Id", "Name", "ProjectId", "ParentId")
-select "Id", "Name", "ProjectId", "ParentId" from "ProjectItems" where "Discriminator" = {1 << 2}
+select "Id", "Name", "ProjectId", "ParentId" from "ProjectItems" where "Discriminator" = 2
 """);
 
             migrationBuilder.DropForeignKey(
@@ -145,12 +145,12 @@ select "Id", "Name", "ProjectId", "ParentId" from "ProjectItems" where "Discrimi
 
             migrationBuilder.Sql($"""
 delete from "Employees"
-where "Discriminator" != {1 << 2}
+where "Discriminator" != 2
 """);
 
             migrationBuilder.Sql($"""
 delete from "ProjectItems"
-where "Discriminator" != {1 << 1}
+where "Discriminator" != 2
 """);
 
             migrationBuilder.DropColumn(

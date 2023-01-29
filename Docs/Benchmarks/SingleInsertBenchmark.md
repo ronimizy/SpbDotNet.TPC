@@ -9,8 +9,8 @@ Unknown processor
 InvocationCount=1  UnrollFactor=1  
 
 ```
-| Strategy |     Mean |     Error |    StdDev | Allocated |
-|----------|---------:|----------:|----------:|----------:|
-| Tpc      | 1.401 ms | 0.0379 ms | 0.1087 ms |  38.59 KB |
-| Tph      | 1.321 ms | 0.0401 ms | 0.1162 ms |  38.23 KB |
-| Tpt      | 1.468 ms | 0.0475 ms | 0.1370 ms |  38.23 KB |
+| Strategy |     Mean |     Error |    StdDev |   Median | Allocated |
+|----------|---------:|----------:|----------:|---------:|----------:|
+| Tpc      | 2.920 ms | 0.0577 ms | 0.1336 ms | 2.875 ms |  808.9 KB |
+| Tph      | 2.849 ms | 0.0640 ms | 0.1838 ms | 2.767 ms | 808.54 KB |
+| Tpt      | 3.005 ms | 0.0597 ms | 0.1178 ms | 2.964 ms | 808.54 KB |

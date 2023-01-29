@@ -19,21 +19,21 @@ public class TphDatabaseContext : DatabaseContextBase, IContextOptionsCreatable<
         modelBuilder.Entity<ProjectItem>()
             .UseTphMappingStrategy()
             .HasDiscriminator<int>("Discriminator")
-            .HasValue<ProjectTask>(1 << 1)
-            .HasValue<ProjectStage>(1 << 2);
+            .HasValue<ProjectTask>(1)
+            .HasValue<ProjectStage>(2);
 
         modelBuilder.Entity<Employee>()
             .UseTphMappingStrategy()
             .HasDiscriminator<int>("Discriminator")
-            .HasValue<Intern>(1 << 1)
-            .HasValue<Subordinate>(1 << 2)
-            .HasValue<Manager>(1 << 3);
+            .HasValue<Intern>(1)
+            .HasValue<Subordinate>(2)
+            .HasValue<Manager>(3);
 
         modelBuilder.Entity<EmployeeUniform>()
             .UseTphMappingStrategy()
             .HasDiscriminator<int>("Discriminator")
-            .HasValue<CasualEmployeeUniform>(1 << 1)
-            .HasValue<OfficialEmployeeUniform>(1 << 2)
-            .HasValue<DisplayEmployeeUniform>(1 << 3);
+            .HasValue<CasualEmployeeUniform>(1)
+            .HasValue<OfficialEmployeeUniform>(2)
+            .HasValue<DisplayEmployeeUniform>(3);
     }
 }

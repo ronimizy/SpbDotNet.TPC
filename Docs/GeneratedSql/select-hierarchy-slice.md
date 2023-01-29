@@ -29,7 +29,7 @@ SELECT e."Id",
        e."InternshipExpiration"
 
 FROM "Employees" AS e
-WHERE e."Discriminator" IN (4, 2)
+WHERE e."Discriminator" IN (2, 1)
 ```
 
 ### TPT

@@ -11,7 +11,7 @@ VALUES (Guid_1, NULL, Guid_2);
 
 ```postgresql
 INSERT INTO "Employees" ("Id", "Discriminator", "ManagerId", "UserId")
-VALUES (Guid_1, 4, NULL, Guid_2);
+VALUES (Guid_1, 2, NULL, Guid_2);
 ```
 
 ### TPT
