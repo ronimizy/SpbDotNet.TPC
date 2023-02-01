@@ -4,7 +4,11 @@ using BenchmarkDotNet.Running;
 using FluentScanning;
 using ronimizy.SpbDotNet.TPC.Benchmarks.Benchmarks;
 
-BenchmarkRunner.Run<BulkInsertSingleTypeBenchmark>();
+BenchmarkRunner.Run(new Type[]
+{
+    typeof(SparseTableInsertBenchmark),
+    typeof(SparseTableQueryBenchmark),
+});
 return;
 
 Type[] benchmarkTypes = new AssemblyScanner(typeof(Program))
