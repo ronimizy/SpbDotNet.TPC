@@ -1,0 +1,978 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 6 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet  restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /Users/george/Documents/C#/ronimizy.SpbDotNet.TPC/Source/ronimizy.SpbDotNet.TPC.Benchmark/bin/Release/net7.0/e3dd4d9a-38b3-4639-9ffe-b4f092b104d8
+// command took 0.86s and exited with 0
+// start dotnet  build -c Release --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /Users/george/Documents/C#/ronimizy.SpbDotNet.TPC/Source/ronimizy.SpbDotNet.TPC.Benchmark/bin/Release/net7.0/e3dd4d9a-38b3-4639-9ffe-b4f092b104d8
+// command took 4.93s and exited with 0
+// ***** Done, took 00:00:05 (5.84 sec)   *****
+// Found 6 benchmarks:
+//   BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: Job-VUEDRE(InvocationCount=1, UnrollFactor=1) [Size=1000, Factory=TpcDatabaseContext]
+//   BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: Job-VUEDRE(InvocationCount=1, UnrollFactor=1) [Size=1000, Factory=TphDatabaseContext]
+//   BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: Job-VUEDRE(InvocationCount=1, UnrollFactor=1) [Size=1000, Factory=TptDatabaseContext]
+//   BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: Job-VUEDRE(InvocationCount=1, UnrollFactor=1) [Size=10000, Factory=TpcDatabaseContext]
+//   BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: Job-VUEDRE(InvocationCount=1, UnrollFactor=1) [Size=10000, Factory=TphDatabaseContext]
+//   BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: Job-VUEDRE(InvocationCount=1, UnrollFactor=1) [Size=10000, Factory=TptDatabaseContext]
+
+// **************************
+// Benchmark: BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: Job-VUEDRE(InvocationCount=1, UnrollFactor=1) [Size=1000, Factory=TpcDatabaseContext]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet e3dd4d9a-38b3-4639-9ffe-b4f092b104d8.dll --anonymousPipes 123 124 --benchmarkName "ronimizy.SpbDotNet.TPC.Benchmarks.Benchmarks.BulkInsertSingleTypeBenchmark.BulkEmployeeInsert(Size: 1000, Factory: TpcDatabaseContext)" --job "InvocationCount=1, UnrollFactor=1" --benchmarkId 0 in /Users/george/Documents/C#/ronimizy.SpbDotNet.TPC/Source/ronimizy.SpbDotNet.TPC.Benchmark/bin/Release/net7.0/e3dd4d9a-38b3-4639-9ffe-b4f092b104d8/bin/Release/net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.1 (7.0.122.56804), Arm64 RyuJIT AdvSIMD
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AdvSIMD,AES,CRC32,DP,RDM,SHA1,SHA256 VectorSize=128
+// Job: Job-TCTPNI(InvocationCount=1, UnrollFactor=1)
+
+[testcontainers.org 00:00:00.09] Connected to Docker:
+  Host: unix:/var/run/docker.sock
+  Server Version: 20.10.21
+  Kernel Version: 5.15.49-linuxkit
+  API Version: 1.41
+  Operating System: Docker Desktop
+  Total Memory: 7.76 GB
+[testcontainers.org 00:00:00.18] Docker container 3fc6a162c2d0bab14a25456b668d630986da8a57fc9a3d04b09791cb6263e590 created
+[testcontainers.org 00:00:00.22] Start Docker container 3fc6a162c2d0bab14a25456b668d630986da8a57fc9a3d04b09791cb6263e590
+[testcontainers.org 00:00:00.48] Docker container de77ba62b421d4aefdbf47975ae11e01d1a0ae097a0e6d0abe4a8b02ad299b37 created
+[testcontainers.org 00:00:00.49] Start Docker container de77ba62b421d4aefdbf47975ae11e01d1a0ae097a0e6d0abe4a8b02ad299b37
+[testcontainers.org 00:00:00.68] Execute "pg_isready --host localhost --port 5432" at Docker container de77ba62b421d4aefdbf47975ae11e01d1a0ae097a0e6d0abe4a8b02ad299b37
+[testcontainers.org 00:00:01.79] Execute "pg_isready --host localhost --port 5432" at Docker container de77ba62b421d4aefdbf47975ae11e01d1a0ae097a0e6d0abe4a8b02ad299b37
+OverheadJitting  1: 1 op, 123667.00 ns, 123.6670 us/op
+WorkloadJitting  1: 1 op, 96360459.00 ns, 96.3605 ms/op
+
+OverheadWarmup   1: 1 op, 334.00 ns, 334.0000 ns/op
+OverheadWarmup   2: 1 op, 458.00 ns, 458.0000 ns/op
+OverheadWarmup   3: 1 op, 333.00 ns, 333.0000 ns/op
+OverheadWarmup   4: 1 op, 125.00 ns, 125.0000 ns/op
+OverheadWarmup   5: 1 op, 83.00 ns, 83.0000 ns/op
+OverheadWarmup   6: 1 op, 0.00 ns, 0.0000 ns/op
+OverheadWarmup   7: 1 op, 500.00 ns, 500.0000 ns/op
+OverheadWarmup   8: 1 op, 167.00 ns, 167.0000 ns/op
+
+OverheadActual   1: 1 op, 41.00 ns, 41.0000 ns/op
+OverheadActual   2: 1 op, 333.00 ns, 333.0000 ns/op
+OverheadActual   3: 1 op, 208.00 ns, 208.0000 ns/op
+OverheadActual   4: 1 op, 333.00 ns, 333.0000 ns/op
+OverheadActual   5: 1 op, 167.00 ns, 167.0000 ns/op
+OverheadActual   6: 1 op, 167.00 ns, 167.0000 ns/op
+OverheadActual   7: 1 op, 0.00 ns, 0.0000 ns/op
+OverheadActual   8: 1 op, 208.00 ns, 208.0000 ns/op
+OverheadActual   9: 1 op, 125.00 ns, 125.0000 ns/op
+OverheadActual  10: 1 op, 209.00 ns, 209.0000 ns/op
+OverheadActual  11: 1 op, 333.00 ns, 333.0000 ns/op
+OverheadActual  12: 1 op, 208.00 ns, 208.0000 ns/op
+OverheadActual  13: 1 op, 208.00 ns, 208.0000 ns/op
+OverheadActual  14: 1 op, 250.00 ns, 250.0000 ns/op
+OverheadActual  15: 1 op, 416.00 ns, 416.0000 ns/op
+OverheadActual  16: 1 op, 167.00 ns, 167.0000 ns/op
+OverheadActual  17: 1 op, 375.00 ns, 375.0000 ns/op
+OverheadActual  18: 1 op, 250.00 ns, 250.0000 ns/op
+OverheadActual  19: 1 op, 250.00 ns, 250.0000 ns/op
+OverheadActual  20: 1 op, 208.00 ns, 208.0000 ns/op
+
+WorkloadWarmup   1: 1 op, 77767125.00 ns, 77.7671 ms/op
+WorkloadWarmup   2: 1 op, 47679959.00 ns, 47.6800 ms/op
+WorkloadWarmup   3: 1 op, 50370583.00 ns, 50.3706 ms/op
+WorkloadWarmup   4: 1 op, 57805875.00 ns, 57.8059 ms/op
+WorkloadWarmup   5: 1 op, 47334792.00 ns, 47.3348 ms/op
+WorkloadWarmup   6: 1 op, 42735083.00 ns, 42.7351 ms/op
+WorkloadWarmup   7: 1 op, 37409375.00 ns, 37.4094 ms/op
+WorkloadWarmup   8: 1 op, 35624833.00 ns, 35.6248 ms/op
+WorkloadWarmup   9: 1 op, 34887917.00 ns, 34.8879 ms/op
+WorkloadWarmup  10: 1 op, 35578708.00 ns, 35.5787 ms/op
+WorkloadWarmup  11: 1 op, 34920458.00 ns, 34.9205 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 35194792.00 ns, 35.1948 ms/op
+WorkloadActual   2: 1 op, 36562209.00 ns, 36.5622 ms/op
+WorkloadActual   3: 1 op, 36001500.00 ns, 36.0015 ms/op
+WorkloadActual   4: 1 op, 35420166.00 ns, 35.4202 ms/op
+WorkloadActual   5: 1 op, 34855917.00 ns, 34.8559 ms/op
+WorkloadActual   6: 1 op, 34969750.00 ns, 34.9697 ms/op
+WorkloadActual   7: 1 op, 37096542.00 ns, 37.0965 ms/op
+WorkloadActual   8: 1 op, 35412959.00 ns, 35.4130 ms/op
+WorkloadActual   9: 1 op, 36141000.00 ns, 36.1410 ms/op
+WorkloadActual  10: 1 op, 35817250.00 ns, 35.8173 ms/op
+WorkloadActual  11: 1 op, 34771583.00 ns, 34.7716 ms/op
+WorkloadActual  12: 1 op, 35712708.00 ns, 35.7127 ms/op
+WorkloadActual  13: 1 op, 35303542.00 ns, 35.3035 ms/op
+WorkloadActual  14: 1 op, 36245584.00 ns, 36.2456 ms/op
+WorkloadActual  15: 1 op, 35946542.00 ns, 35.9465 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 35194584.00 ns, 35.1946 ms/op
+WorkloadResult   2: 1 op, 36562001.00 ns, 36.5620 ms/op
+WorkloadResult   3: 1 op, 36001292.00 ns, 36.0013 ms/op
+WorkloadResult   4: 1 op, 35419958.00 ns, 35.4200 ms/op
+WorkloadResult   5: 1 op, 34855709.00 ns, 34.8557 ms/op
+WorkloadResult   6: 1 op, 34969542.00 ns, 34.9695 ms/op
+WorkloadResult   7: 1 op, 37096334.00 ns, 37.0963 ms/op
+WorkloadResult   8: 1 op, 35412751.00 ns, 35.4128 ms/op
+WorkloadResult   9: 1 op, 36140792.00 ns, 36.1408 ms/op
+WorkloadResult  10: 1 op, 35817042.00 ns, 35.8170 ms/op
+WorkloadResult  11: 1 op, 34771375.00 ns, 34.7714 ms/op
+WorkloadResult  12: 1 op, 35712500.00 ns, 35.7125 ms/op
+WorkloadResult  13: 1 op, 35303334.00 ns, 35.3033 ms/op
+WorkloadResult  14: 1 op, 36245376.00 ns, 36.2454 ms/op
+WorkloadResult  15: 1 op, 35946334.00 ns, 35.9463 ms/op
+// GC:  2 0 0 13961816 1
+// Threading:  16 0 1
+
+[testcontainers.org 00:00:08.09] Delete Docker container de77ba62b421d4aefdbf47975ae11e01d1a0ae097a0e6d0abe4a8b02ad299b37
+// AfterAll
+// Benchmark Process 62560 has exited with code 0.
+
+Mean = 35.697 ms, StdErr = 0.169 ms (0.47%), N = 15, StdDev = 0.656 ms
+Min = 34.771 ms, Q1 = 35.249 ms, Median = 35.712 ms, Q3 = 36.071 ms, Max = 37.096 ms
+IQR = 0.822 ms, LowerFence = 34.016 ms, UpperFence = 37.304 ms
+ConfidenceInterval = [34.995 ms; 36.398 ms] (CI 99.9%), Margin = 0.702 ms (1.97% of Mean)
+Skewness = 0.4, Kurtosis = 2.21, MValue = 2
+
+// ** Remained 5 (83.3%) benchmark(s) to run. Estimated finish 2023-01-19 23:05 (0h 0m from now) **
+// **************************
+// Benchmark: BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: Job-VUEDRE(InvocationCount=1, UnrollFactor=1) [Size=1000, Factory=TphDatabaseContext]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet e3dd4d9a-38b3-4639-9ffe-b4f092b104d8.dll --anonymousPipes 125 126 --benchmarkName "ronimizy.SpbDotNet.TPC.Benchmarks.Benchmarks.BulkInsertSingleTypeBenchmark.BulkEmployeeInsert(Size: 1000, Factory: TphDatabaseContext)" --job "InvocationCount=1, UnrollFactor=1" --benchmarkId 1 in /Users/george/Documents/C#/ronimizy.SpbDotNet.TPC/Source/ronimizy.SpbDotNet.TPC.Benchmark/bin/Release/net7.0/e3dd4d9a-38b3-4639-9ffe-b4f092b104d8/bin/Release/net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.1 (7.0.122.56804), Arm64 RyuJIT AdvSIMD
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AdvSIMD,AES,CRC32,DP,RDM,SHA1,SHA256 VectorSize=128
+// Job: Job-WBSRTR(InvocationCount=1, UnrollFactor=1)
+
+[testcontainers.org 00:00:00.08] Connected to Docker:
+  Host: unix:/var/run/docker.sock
+  Server Version: 20.10.21
+  Kernel Version: 5.15.49-linuxkit
+  API Version: 1.41
+  Operating System: Docker Desktop
+  Total Memory: 7.76 GB
+[testcontainers.org 00:00:00.16] Docker container 80de770c4628982b9f30ac4cd44c7dad2e1e1b09b9997cb645ac8c1718fbe1ba created
+[testcontainers.org 00:00:00.20] Start Docker container 80de770c4628982b9f30ac4cd44c7dad2e1e1b09b9997cb645ac8c1718fbe1ba
+[testcontainers.org 00:00:00.40] Docker container 91229f895b037eae375429b1e5073f598d71668f3b8267910d12587193f14659 created
+[testcontainers.org 00:00:00.41] Start Docker container 91229f895b037eae375429b1e5073f598d71668f3b8267910d12587193f14659
+[testcontainers.org 00:00:00.59] Execute "pg_isready --host localhost --port 5432" at Docker container 91229f895b037eae375429b1e5073f598d71668f3b8267910d12587193f14659
+[testcontainers.org 00:00:01.66] Execute "pg_isready --host localhost --port 5432" at Docker container 91229f895b037eae375429b1e5073f598d71668f3b8267910d12587193f14659
+OverheadJitting  1: 1 op, 148250.00 ns, 148.2500 us/op
+WorkloadJitting  1: 1 op, 96411791.00 ns, 96.4118 ms/op
+
+OverheadWarmup   1: 1 op, 375.00 ns, 375.0000 ns/op
+OverheadWarmup   2: 1 op, 167.00 ns, 167.0000 ns/op
+OverheadWarmup   3: 1 op, 250.00 ns, 250.0000 ns/op
+OverheadWarmup   4: 1 op, 292.00 ns, 292.0000 ns/op
+OverheadWarmup   5: 1 op, 125.00 ns, 125.0000 ns/op
+OverheadWarmup   6: 1 op, 541.00 ns, 541.0000 ns/op
+OverheadWarmup   7: 1 op, 167.00 ns, 167.0000 ns/op
+
+OverheadActual   1: 1 op, 208.00 ns, 208.0000 ns/op
+OverheadActual   2: 1 op, 250.00 ns, 250.0000 ns/op
+OverheadActual   3: 1 op, 209.00 ns, 209.0000 ns/op
+OverheadActual   4: 1 op, 333.00 ns, 333.0000 ns/op
+OverheadActual   5: 1 op, 250.00 ns, 250.0000 ns/op
+OverheadActual   6: 1 op, 166.00 ns, 166.0000 ns/op
+OverheadActual   7: 1 op, 250.00 ns, 250.0000 ns/op
+OverheadActual   8: 1 op, 41.00 ns, 41.0000 ns/op
+OverheadActual   9: 1 op, 125.00 ns, 125.0000 ns/op
+OverheadActual  10: 1 op, 84.00 ns, 84.0000 ns/op
+OverheadActual  11: 1 op, 125.00 ns, 125.0000 ns/op
+OverheadActual  12: 1 op, 83.00 ns, 83.0000 ns/op
+OverheadActual  13: 1 op, 83.00 ns, 83.0000 ns/op
+OverheadActual  14: 1 op, 83.00 ns, 83.0000 ns/op
+OverheadActual  15: 1 op, 0.00 ns, 0.0000 ns/op
+OverheadActual  16: 1 op, 541.00 ns, 541.0000 ns/op
+OverheadActual  17: 1 op, 375.00 ns, 375.0000 ns/op
+OverheadActual  18: 1 op, 166.00 ns, 166.0000 ns/op
+OverheadActual  19: 1 op, 208.00 ns, 208.0000 ns/op
+OverheadActual  20: 1 op, 250.00 ns, 250.0000 ns/op
+
+WorkloadWarmup   1: 1 op, 79292334.00 ns, 79.2923 ms/op
+WorkloadWarmup   2: 1 op, 53722416.00 ns, 53.7224 ms/op
+WorkloadWarmup   3: 1 op, 51473958.00 ns, 51.4740 ms/op
+WorkloadWarmup   4: 1 op, 57196584.00 ns, 57.1966 ms/op
+WorkloadWarmup   5: 1 op, 53445208.00 ns, 53.4452 ms/op
+WorkloadWarmup   6: 1 op, 49968917.00 ns, 49.9689 ms/op
+WorkloadWarmup   7: 1 op, 43348792.00 ns, 43.3488 ms/op
+WorkloadWarmup   8: 1 op, 38117000.00 ns, 38.1170 ms/op
+WorkloadWarmup   9: 1 op, 37533458.00 ns, 37.5335 ms/op
+WorkloadWarmup  10: 1 op, 37417375.00 ns, 37.4174 ms/op
+WorkloadWarmup  11: 1 op, 38433500.00 ns, 38.4335 ms/op
+WorkloadWarmup  12: 1 op, 37864458.00 ns, 37.8645 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 37196750.00 ns, 37.1968 ms/op
+WorkloadActual   2: 1 op, 37736000.00 ns, 37.7360 ms/op
+WorkloadActual   3: 1 op, 39351500.00 ns, 39.3515 ms/op
+WorkloadActual   4: 1 op, 37488333.00 ns, 37.4883 ms/op
+WorkloadActual   5: 1 op, 38194000.00 ns, 38.1940 ms/op
+WorkloadActual   6: 1 op, 37163250.00 ns, 37.1632 ms/op
+WorkloadActual   7: 1 op, 38635333.00 ns, 38.6353 ms/op
+WorkloadActual   8: 1 op, 38282958.00 ns, 38.2830 ms/op
+WorkloadActual   9: 1 op, 37914792.00 ns, 37.9148 ms/op
+WorkloadActual  10: 1 op, 37376584.00 ns, 37.3766 ms/op
+WorkloadActual  11: 1 op, 37735000.00 ns, 37.7350 ms/op
+WorkloadActual  12: 1 op, 36816750.00 ns, 36.8167 ms/op
+WorkloadActual  13: 1 op, 37544083.00 ns, 37.5441 ms/op
+WorkloadActual  14: 1 op, 38794750.00 ns, 38.7948 ms/op
+WorkloadActual  15: 1 op, 38613583.00 ns, 38.6136 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 37196563.00 ns, 37.1966 ms/op
+WorkloadResult   2: 1 op, 37735813.00 ns, 37.7358 ms/op
+WorkloadResult   3: 1 op, 39351313.00 ns, 39.3513 ms/op
+WorkloadResult   4: 1 op, 37488146.00 ns, 37.4881 ms/op
+WorkloadResult   5: 1 op, 38193813.00 ns, 38.1938 ms/op
+WorkloadResult   6: 1 op, 37163063.00 ns, 37.1631 ms/op
+WorkloadResult   7: 1 op, 38635146.00 ns, 38.6351 ms/op
+WorkloadResult   8: 1 op, 38282771.00 ns, 38.2828 ms/op
+WorkloadResult   9: 1 op, 37914605.00 ns, 37.9146 ms/op
+WorkloadResult  10: 1 op, 37376397.00 ns, 37.3764 ms/op
+WorkloadResult  11: 1 op, 37734813.00 ns, 37.7348 ms/op
+WorkloadResult  12: 1 op, 36816563.00 ns, 36.8166 ms/op
+WorkloadResult  13: 1 op, 37543896.00 ns, 37.5439 ms/op
+WorkloadResult  14: 1 op, 38794563.00 ns, 38.7946 ms/op
+WorkloadResult  15: 1 op, 38613396.00 ns, 38.6134 ms/op
+// GC:  2 0 0 15008616 1
+// Threading:  17 0 1
+
+[testcontainers.org 00:00:07.81] Delete Docker container 91229f895b037eae375429b1e5073f598d71668f3b8267910d12587193f14659
+// AfterAll
+// Benchmark Process 62582 has exited with code 0.
+
+Mean = 37.923 ms, StdErr = 0.183 ms (0.48%), N = 15, StdDev = 0.708 ms
+Min = 36.817 ms, Q1 = 37.432 ms, Median = 37.736 ms, Q3 = 38.448 ms, Max = 39.351 ms
+IQR = 1.016 ms, LowerFence = 35.909 ms, UpperFence = 39.972 ms
+ConfidenceInterval = [37.166 ms; 38.680 ms] (CI 99.9%), Margin = 0.757 ms (2.00% of Mean)
+Skewness = 0.35, Kurtosis = 1.99, MValue = 2
+
+// ** Remained 4 (66.7%) benchmark(s) to run. Estimated finish 2023-01-19 23:05 (0h 0m from now) **
+// **************************
+// Benchmark: BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: Job-VUEDRE(InvocationCount=1, UnrollFactor=1) [Size=1000, Factory=TptDatabaseContext]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet e3dd4d9a-38b3-4639-9ffe-b4f092b104d8.dll --anonymousPipes 125 126 --benchmarkName "ronimizy.SpbDotNet.TPC.Benchmarks.Benchmarks.BulkInsertSingleTypeBenchmark.BulkEmployeeInsert(Size: 1000, Factory: TptDatabaseContext)" --job "InvocationCount=1, UnrollFactor=1" --benchmarkId 2 in /Users/george/Documents/C#/ronimizy.SpbDotNet.TPC/Source/ronimizy.SpbDotNet.TPC.Benchmark/bin/Release/net7.0/e3dd4d9a-38b3-4639-9ffe-b4f092b104d8/bin/Release/net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.1 (7.0.122.56804), Arm64 RyuJIT AdvSIMD
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AdvSIMD,AES,CRC32,DP,RDM,SHA1,SHA256 VectorSize=128
+// Job: Job-QFNMXT(InvocationCount=1, UnrollFactor=1)
+
+[testcontainers.org 00:00:00.07] Connected to Docker:
+  Host: unix:/var/run/docker.sock
+  Server Version: 20.10.21
+  Kernel Version: 5.15.49-linuxkit
+  API Version: 1.41
+  Operating System: Docker Desktop
+  Total Memory: 7.76 GB
+[testcontainers.org 00:00:00.14] Docker container cfd18436c76758b02e0254dcbc419922e02a75cf8c696b4c8db59495b2133326 created
+[testcontainers.org 00:00:00.18] Start Docker container cfd18436c76758b02e0254dcbc419922e02a75cf8c696b4c8db59495b2133326
+[testcontainers.org 00:00:00.38] Docker container 4c7f43de65bd40ed22be8e30c84976877b2cfa608ebb3613e4cc247e867471e7 created
+[testcontainers.org 00:00:00.39] Start Docker container 4c7f43de65bd40ed22be8e30c84976877b2cfa608ebb3613e4cc247e867471e7
+[testcontainers.org 00:00:00.56] Execute "pg_isready --host localhost --port 5432" at Docker container 4c7f43de65bd40ed22be8e30c84976877b2cfa608ebb3613e4cc247e867471e7
+[testcontainers.org 00:00:01.64] Execute "pg_isready --host localhost --port 5432" at Docker container 4c7f43de65bd40ed22be8e30c84976877b2cfa608ebb3613e4cc247e867471e7
+OverheadJitting  1: 1 op, 138291.00 ns, 138.2910 us/op
+WorkloadJitting  1: 1 op, 140227084.00 ns, 140.2271 ms/op
+
+OverheadWarmup   1: 1 op, 458.00 ns, 458.0000 ns/op
+OverheadWarmup   2: 1 op, 333.00 ns, 333.0000 ns/op
+OverheadWarmup   3: 1 op, 208.00 ns, 208.0000 ns/op
+OverheadWarmup   4: 1 op, 250.00 ns, 250.0000 ns/op
+OverheadWarmup   5: 1 op, 125.00 ns, 125.0000 ns/op
+OverheadWarmup   6: 1 op, 0.00 ns, 0.0000 ns/op
+OverheadWarmup   7: 1 op, 291.00 ns, 291.0000 ns/op
+OverheadWarmup   8: 1 op, 83.00 ns, 83.0000 ns/op
+
+OverheadActual   1: 1 op, 42.00 ns, 42.0000 ns/op
+OverheadActual   2: 1 op, 208.00 ns, 208.0000 ns/op
+OverheadActual   3: 1 op, 83.00 ns, 83.0000 ns/op
+OverheadActual   4: 1 op, 375.00 ns, 375.0000 ns/op
+OverheadActual   5: 1 op, 208.00 ns, 208.0000 ns/op
+OverheadActual   6: 1 op, 2083.00 ns, 2.0830 us/op
+OverheadActual   7: 1 op, 0.00 ns, 0.0000 ns/op
+OverheadActual   8: 1 op, 292.00 ns, 292.0000 ns/op
+OverheadActual   9: 1 op, 125.00 ns, 125.0000 ns/op
+OverheadActual  10: 1 op, 125.00 ns, 125.0000 ns/op
+OverheadActual  11: 1 op, 41.00 ns, 41.0000 ns/op
+OverheadActual  12: 1 op, 0.00 ns, 0.0000 ns/op
+OverheadActual  13: 1 op, 250.00 ns, 250.0000 ns/op
+OverheadActual  14: 1 op, 84.00 ns, 84.0000 ns/op
+OverheadActual  15: 1 op, 83.00 ns, 83.0000 ns/op
+OverheadActual  16: 1 op, 459.00 ns, 459.0000 ns/op
+OverheadActual  17: 1 op, 167.00 ns, 167.0000 ns/op
+OverheadActual  18: 1 op, 209.00 ns, 209.0000 ns/op
+OverheadActual  19: 1 op, 83.00 ns, 83.0000 ns/op
+OverheadActual  20: 1 op, 0.00 ns, 0.0000 ns/op
+
+WorkloadWarmup   1: 1 op, 97274167.00 ns, 97.2742 ms/op
+WorkloadWarmup   2: 1 op, 96959125.00 ns, 96.9591 ms/op
+WorkloadWarmup   3: 1 op, 80279500.00 ns, 80.2795 ms/op
+WorkloadWarmup   4: 1 op, 80167750.00 ns, 80.1677 ms/op
+WorkloadWarmup   5: 1 op, 72540250.00 ns, 72.5403 ms/op
+WorkloadWarmup   6: 1 op, 62955625.00 ns, 62.9556 ms/op
+WorkloadWarmup   7: 1 op, 63983375.00 ns, 63.9834 ms/op
+WorkloadWarmup   8: 1 op, 63916209.00 ns, 63.9162 ms/op
+WorkloadWarmup   9: 1 op, 83075625.00 ns, 83.0756 ms/op
+WorkloadWarmup  10: 1 op, 61253750.00 ns, 61.2537 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 61272792.00 ns, 61.2728 ms/op
+WorkloadActual   2: 1 op, 61249250.00 ns, 61.2493 ms/op
+WorkloadActual   3: 1 op, 61479292.00 ns, 61.4793 ms/op
+WorkloadActual   4: 1 op, 62074125.00 ns, 62.0741 ms/op
+WorkloadActual   5: 1 op, 62709500.00 ns, 62.7095 ms/op
+WorkloadActual   6: 1 op, 68662792.00 ns, 68.6628 ms/op
+WorkloadActual   7: 1 op, 61707625.00 ns, 61.7076 ms/op
+WorkloadActual   8: 1 op, 63380250.00 ns, 63.3802 ms/op
+WorkloadActual   9: 1 op, 62001541.00 ns, 62.0015 ms/op
+WorkloadActual  10: 1 op, 61054083.00 ns, 61.0541 ms/op
+WorkloadActual  11: 1 op, 60836417.00 ns, 60.8364 ms/op
+WorkloadActual  12: 1 op, 62939250.00 ns, 62.9393 ms/op
+WorkloadActual  13: 1 op, 61119125.00 ns, 61.1191 ms/op
+WorkloadActual  14: 1 op, 61801292.00 ns, 61.8013 ms/op
+WorkloadActual  15: 1 op, 62840792.00 ns, 62.8408 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 61272667.00 ns, 61.2727 ms/op
+WorkloadResult   2: 1 op, 61249125.00 ns, 61.2491 ms/op
+WorkloadResult   3: 1 op, 61479167.00 ns, 61.4792 ms/op
+WorkloadResult   4: 1 op, 62074000.00 ns, 62.0740 ms/op
+WorkloadResult   5: 1 op, 62709375.00 ns, 62.7094 ms/op
+WorkloadResult   6: 1 op, 61707500.00 ns, 61.7075 ms/op
+WorkloadResult   7: 1 op, 63380125.00 ns, 63.3801 ms/op
+WorkloadResult   8: 1 op, 62001416.00 ns, 62.0014 ms/op
+WorkloadResult   9: 1 op, 61053958.00 ns, 61.0540 ms/op
+WorkloadResult  10: 1 op, 60836292.00 ns, 60.8363 ms/op
+WorkloadResult  11: 1 op, 62939125.00 ns, 62.9391 ms/op
+WorkloadResult  12: 1 op, 61119000.00 ns, 61.1190 ms/op
+WorkloadResult  13: 1 op, 61801167.00 ns, 61.8012 ms/op
+WorkloadResult  14: 1 op, 62840667.00 ns, 62.8407 ms/op
+// GC:  3 0 0 25226640 1
+// Threading:  28 0 1
+
+[testcontainers.org 00:00:09.01] Delete Docker container 4c7f43de65bd40ed22be8e30c84976877b2cfa608ebb3613e4cc247e867471e7
+// AfterAll
+// Benchmark Process 62607 has exited with code 0.
+
+Mean = 61.890 ms, StdErr = 0.214 ms (0.35%), N = 14, StdDev = 0.801 ms
+Min = 60.836 ms, Q1 = 61.255 ms, Median = 61.754 ms, Q3 = 62.551 ms, Max = 63.380 ms
+IQR = 1.296 ms, LowerFence = 59.312 ms, UpperFence = 64.494 ms
+ConfidenceInterval = [60.986 ms; 62.794 ms] (CI 99.9%), Margin = 0.904 ms (1.46% of Mean)
+Skewness = 0.43, Kurtosis = 1.7, MValue = 2
+
+// ** Remained 3 (50.0%) benchmark(s) to run. Estimated finish 2023-01-19 23:05 (0h 0m from now) **
+// **************************
+// Benchmark: BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: Job-VUEDRE(InvocationCount=1, UnrollFactor=1) [Size=10000, Factory=TpcDatabaseContext]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet e3dd4d9a-38b3-4639-9ffe-b4f092b104d8.dll --anonymousPipes 125 126 --benchmarkName "ronimizy.SpbDotNet.TPC.Benchmarks.Benchmarks.BulkInsertSingleTypeBenchmark.BulkEmployeeInsert(Size: 10000, Factory: TpcDatabaseContext)" --job "InvocationCount=1, UnrollFactor=1" --benchmarkId 3 in /Users/george/Documents/C#/ronimizy.SpbDotNet.TPC/Source/ronimizy.SpbDotNet.TPC.Benchmark/bin/Release/net7.0/e3dd4d9a-38b3-4639-9ffe-b4f092b104d8/bin/Release/net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.1 (7.0.122.56804), Arm64 RyuJIT AdvSIMD
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AdvSIMD,AES,CRC32,DP,RDM,SHA1,SHA256 VectorSize=128
+// Job: Job-LTLNSZ(InvocationCount=1, UnrollFactor=1)
+
+[testcontainers.org 00:00:00.07] Connected to Docker:
+  Host: unix:/var/run/docker.sock
+  Server Version: 20.10.21
+  Kernel Version: 5.15.49-linuxkit
+  API Version: 1.41
+  Operating System: Docker Desktop
+  Total Memory: 7.76 GB
+[testcontainers.org 00:00:00.14] Docker container ec355343c0b2f126a0873de91b133246e624e8e12a220ef3215b04e5e34ee0cf created
+[testcontainers.org 00:00:00.18] Start Docker container ec355343c0b2f126a0873de91b133246e624e8e12a220ef3215b04e5e34ee0cf
+[testcontainers.org 00:00:00.39] Docker container c3dea51455003f68cbe36e699d468a81731a47bb32524a4355fd8f78ffe1f05d created
+[testcontainers.org 00:00:00.40] Start Docker container c3dea51455003f68cbe36e699d468a81731a47bb32524a4355fd8f78ffe1f05d
+[testcontainers.org 00:00:00.57] Execute "pg_isready --host localhost --port 5432" at Docker container c3dea51455003f68cbe36e699d468a81731a47bb32524a4355fd8f78ffe1f05d
+[testcontainers.org 00:00:01.65] Execute "pg_isready --host localhost --port 5432" at Docker container c3dea51455003f68cbe36e699d468a81731a47bb32524a4355fd8f78ffe1f05d
+OverheadJitting  1: 1 op, 136500.00 ns, 136.5000 us/op
+WorkloadJitting  1: 1 op, 520153375.00 ns, 520.1534 ms/op
+
+OverheadWarmup   1: 1 op, 542.00 ns, 542.0000 ns/op
+OverheadWarmup   2: 1 op, 333.00 ns, 333.0000 ns/op
+OverheadWarmup   3: 1 op, 625.00 ns, 625.0000 ns/op
+OverheadWarmup   4: 1 op, 541.00 ns, 541.0000 ns/op
+OverheadWarmup   5: 1 op, 708.00 ns, 708.0000 ns/op
+OverheadWarmup   6: 1 op, 583.00 ns, 583.0000 ns/op
+
+OverheadActual   1: 1 op, 500.00 ns, 500.0000 ns/op
+OverheadActual   2: 1 op, 417.00 ns, 417.0000 ns/op
+OverheadActual   3: 1 op, 500.00 ns, 500.0000 ns/op
+OverheadActual   4: 1 op, 375.00 ns, 375.0000 ns/op
+OverheadActual   5: 1 op, 458.00 ns, 458.0000 ns/op
+OverheadActual   6: 1 op, 334.00 ns, 334.0000 ns/op
+OverheadActual   7: 1 op, 625.00 ns, 625.0000 ns/op
+OverheadActual   8: 1 op, 2584.00 ns, 2.5840 us/op
+OverheadActual   9: 1 op, 167.00 ns, 167.0000 ns/op
+OverheadActual  10: 1 op, 459.00 ns, 459.0000 ns/op
+OverheadActual  11: 1 op, 208.00 ns, 208.0000 ns/op
+OverheadActual  12: 1 op, 208.00 ns, 208.0000 ns/op
+OverheadActual  13: 1 op, 417.00 ns, 417.0000 ns/op
+OverheadActual  14: 1 op, 291.00 ns, 291.0000 ns/op
+OverheadActual  15: 1 op, 375.00 ns, 375.0000 ns/op
+OverheadActual  16: 1 op, 167.00 ns, 167.0000 ns/op
+OverheadActual  17: 1 op, 583.00 ns, 583.0000 ns/op
+OverheadActual  18: 1 op, 416.00 ns, 416.0000 ns/op
+OverheadActual  19: 1 op, 500.00 ns, 500.0000 ns/op
+OverheadActual  20: 1 op, 375.00 ns, 375.0000 ns/op
+
+WorkloadWarmup   1: 1 op, 358178666.00 ns, 358.1787 ms/op
+WorkloadWarmup   2: 1 op, 370524500.00 ns, 370.5245 ms/op
+WorkloadWarmup   3: 1 op, 359822333.00 ns, 359.8223 ms/op
+WorkloadWarmup   4: 1 op, 347846041.00 ns, 347.8460 ms/op
+WorkloadWarmup   5: 1 op, 429806833.00 ns, 429.8068 ms/op
+WorkloadWarmup   6: 1 op, 372928083.00 ns, 372.9281 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 357404375.00 ns, 357.4044 ms/op
+WorkloadActual   2: 1 op, 378207875.00 ns, 378.2079 ms/op
+WorkloadActual   3: 1 op, 356428542.00 ns, 356.4285 ms/op
+WorkloadActual   4: 1 op, 345281708.00 ns, 345.2817 ms/op
+WorkloadActual   5: 1 op, 345114709.00 ns, 345.1147 ms/op
+WorkloadActual   6: 1 op, 356216125.00 ns, 356.2161 ms/op
+WorkloadActual   7: 1 op, 363067584.00 ns, 363.0676 ms/op
+WorkloadActual   8: 1 op, 361688083.00 ns, 361.6881 ms/op
+WorkloadActual   9: 1 op, 384942083.00 ns, 384.9421 ms/op
+WorkloadActual  10: 1 op, 356760459.00 ns, 356.7605 ms/op
+WorkloadActual  11: 1 op, 346321500.00 ns, 346.3215 ms/op
+WorkloadActual  12: 1 op, 373930041.00 ns, 373.9300 ms/op
+WorkloadActual  13: 1 op, 359999833.00 ns, 359.9998 ms/op
+WorkloadActual  14: 1 op, 389445959.00 ns, 389.4460 ms/op
+WorkloadActual  15: 1 op, 385752625.00 ns, 385.7526 ms/op
+WorkloadActual  16: 1 op, 355581250.00 ns, 355.5813 ms/op
+WorkloadActual  17: 1 op, 345630417.00 ns, 345.6304 ms/op
+WorkloadActual  18: 1 op, 347887375.00 ns, 347.8874 ms/op
+WorkloadActual  19: 1 op, 386236334.00 ns, 386.2363 ms/op
+WorkloadActual  20: 1 op, 339531916.00 ns, 339.5319 ms/op
+WorkloadActual  21: 1 op, 348907542.00 ns, 348.9075 ms/op
+WorkloadActual  22: 1 op, 367265916.00 ns, 367.2659 ms/op
+WorkloadActual  23: 1 op, 357090875.00 ns, 357.0909 ms/op
+WorkloadActual  24: 1 op, 361697209.00 ns, 361.6972 ms/op
+WorkloadActual  25: 1 op, 342439417.00 ns, 342.4394 ms/op
+WorkloadActual  26: 1 op, 368430833.00 ns, 368.4308 ms/op
+WorkloadActual  27: 1 op, 345259500.00 ns, 345.2595 ms/op
+WorkloadActual  28: 1 op, 342870209.00 ns, 342.8702 ms/op
+WorkloadActual  29: 1 op, 376146416.00 ns, 376.1464 ms/op
+WorkloadActual  30: 1 op, 349427833.00 ns, 349.4278 ms/op
+WorkloadActual  31: 1 op, 351153416.00 ns, 351.1534 ms/op
+WorkloadActual  32: 1 op, 329562042.00 ns, 329.5620 ms/op
+WorkloadActual  33: 1 op, 347411458.00 ns, 347.4115 ms/op
+WorkloadActual  34: 1 op, 352392958.00 ns, 352.3930 ms/op
+WorkloadActual  35: 1 op, 346596417.00 ns, 346.5964 ms/op
+WorkloadActual  36: 1 op, 371981458.00 ns, 371.9815 ms/op
+WorkloadActual  37: 1 op, 348669667.00 ns, 348.6697 ms/op
+WorkloadActual  38: 1 op, 355040958.00 ns, 355.0410 ms/op
+WorkloadActual  39: 1 op, 387762209.00 ns, 387.7622 ms/op
+WorkloadActual  40: 1 op, 343021375.00 ns, 343.0214 ms/op
+WorkloadActual  41: 1 op, 341385083.00 ns, 341.3851 ms/op
+WorkloadActual  42: 1 op, 345503458.00 ns, 345.5035 ms/op
+WorkloadActual  43: 1 op, 358686334.00 ns, 358.6863 ms/op
+WorkloadActual  44: 1 op, 346424541.00 ns, 346.4245 ms/op
+WorkloadActual  45: 1 op, 358217375.00 ns, 358.2174 ms/op
+WorkloadActual  46: 1 op, 388090125.00 ns, 388.0901 ms/op
+WorkloadActual  47: 1 op, 361301125.00 ns, 361.3011 ms/op
+WorkloadActual  48: 1 op, 344545375.00 ns, 344.5454 ms/op
+WorkloadActual  49: 1 op, 380544958.00 ns, 380.5450 ms/op
+WorkloadActual  50: 1 op, 350580584.00 ns, 350.5806 ms/op
+WorkloadActual  51: 1 op, 348474417.00 ns, 348.4744 ms/op
+WorkloadActual  52: 1 op, 347176667.00 ns, 347.1767 ms/op
+WorkloadActual  53: 1 op, 345287250.00 ns, 345.2872 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 357403958.50 ns, 357.4040 ms/op
+WorkloadResult   2: 1 op, 378207458.50 ns, 378.2075 ms/op
+WorkloadResult   3: 1 op, 356428125.50 ns, 356.4281 ms/op
+WorkloadResult   4: 1 op, 345281291.50 ns, 345.2813 ms/op
+WorkloadResult   5: 1 op, 345114292.50 ns, 345.1143 ms/op
+WorkloadResult   6: 1 op, 356215708.50 ns, 356.2157 ms/op
+WorkloadResult   7: 1 op, 363067167.50 ns, 363.0672 ms/op
+WorkloadResult   8: 1 op, 361687666.50 ns, 361.6877 ms/op
+WorkloadResult   9: 1 op, 384941666.50 ns, 384.9417 ms/op
+WorkloadResult  10: 1 op, 356760042.50 ns, 356.7600 ms/op
+WorkloadResult  11: 1 op, 346321083.50 ns, 346.3211 ms/op
+WorkloadResult  12: 1 op, 373929624.50 ns, 373.9296 ms/op
+WorkloadResult  13: 1 op, 359999416.50 ns, 359.9994 ms/op
+WorkloadResult  14: 1 op, 385752208.50 ns, 385.7522 ms/op
+WorkloadResult  15: 1 op, 355580833.50 ns, 355.5808 ms/op
+WorkloadResult  16: 1 op, 345630000.50 ns, 345.6300 ms/op
+WorkloadResult  17: 1 op, 347886958.50 ns, 347.8870 ms/op
+WorkloadResult  18: 1 op, 386235917.50 ns, 386.2359 ms/op
+WorkloadResult  19: 1 op, 339531499.50 ns, 339.5315 ms/op
+WorkloadResult  20: 1 op, 348907125.50 ns, 348.9071 ms/op
+WorkloadResult  21: 1 op, 367265499.50 ns, 367.2655 ms/op
+WorkloadResult  22: 1 op, 357090458.50 ns, 357.0905 ms/op
+WorkloadResult  23: 1 op, 361696792.50 ns, 361.6968 ms/op
+WorkloadResult  24: 1 op, 342439000.50 ns, 342.4390 ms/op
+WorkloadResult  25: 1 op, 368430416.50 ns, 368.4304 ms/op
+WorkloadResult  26: 1 op, 345259083.50 ns, 345.2591 ms/op
+WorkloadResult  27: 1 op, 342869792.50 ns, 342.8698 ms/op
+WorkloadResult  28: 1 op, 376145999.50 ns, 376.1460 ms/op
+WorkloadResult  29: 1 op, 349427416.50 ns, 349.4274 ms/op
+WorkloadResult  30: 1 op, 351152999.50 ns, 351.1530 ms/op
+WorkloadResult  31: 1 op, 329561625.50 ns, 329.5616 ms/op
+WorkloadResult  32: 1 op, 347411041.50 ns, 347.4110 ms/op
+WorkloadResult  33: 1 op, 352392541.50 ns, 352.3925 ms/op
+WorkloadResult  34: 1 op, 346596000.50 ns, 346.5960 ms/op
+WorkloadResult  35: 1 op, 371981041.50 ns, 371.9810 ms/op
+WorkloadResult  36: 1 op, 348669250.50 ns, 348.6693 ms/op
+WorkloadResult  37: 1 op, 355040541.50 ns, 355.0405 ms/op
+WorkloadResult  38: 1 op, 387761792.50 ns, 387.7618 ms/op
+WorkloadResult  39: 1 op, 343020958.50 ns, 343.0210 ms/op
+WorkloadResult  40: 1 op, 341384666.50 ns, 341.3847 ms/op
+WorkloadResult  41: 1 op, 345503041.50 ns, 345.5030 ms/op
+WorkloadResult  42: 1 op, 358685917.50 ns, 358.6859 ms/op
+WorkloadResult  43: 1 op, 346424124.50 ns, 346.4241 ms/op
+WorkloadResult  44: 1 op, 358216958.50 ns, 358.2170 ms/op
+WorkloadResult  45: 1 op, 388089708.50 ns, 388.0897 ms/op
+WorkloadResult  46: 1 op, 361300708.50 ns, 361.3007 ms/op
+WorkloadResult  47: 1 op, 344544958.50 ns, 344.5450 ms/op
+WorkloadResult  48: 1 op, 380544541.50 ns, 380.5445 ms/op
+WorkloadResult  49: 1 op, 350580167.50 ns, 350.5802 ms/op
+WorkloadResult  50: 1 op, 348474000.50 ns, 348.4740 ms/op
+WorkloadResult  51: 1 op, 347176250.50 ns, 347.1763 ms/op
+WorkloadResult  52: 1 op, 345286833.50 ns, 345.2868 ms/op
+// GC:  17 5 0 115954280 1
+// Threading:  110 0 1
+
+[testcontainers.org 00:01:16.23] Delete Docker container c3dea51455003f68cbe36e699d468a81731a47bb32524a4355fd8f78ffe1f05d
+// AfterAll
+// Benchmark Process 62616 has exited with code 0.
+
+Mean = 356.833 ms, StdErr = 1.986 ms (0.56%), N = 52, StdDev = 14.319 ms
+Min = 329.562 ms, Q1 = 346.148 ms, Median = 353.717 ms, Q3 = 362.039 ms, Max = 388.090 ms
+IQR = 15.891 ms, LowerFence = 322.312 ms, UpperFence = 385.876 ms
+ConfidenceInterval = [349.899 ms; 363.767 ms] (CI 99.9%), Margin = 6.934 ms (1.94% of Mean)
+Skewness = 0.77, Kurtosis = 2.65, MValue = 2.27
+
+// ** Remained 2 (33.3%) benchmark(s) to run. Estimated finish 2023-01-19 23:06 (0h 0m from now) **
+// **************************
+// Benchmark: BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: Job-VUEDRE(InvocationCount=1, UnrollFactor=1) [Size=10000, Factory=TphDatabaseContext]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet e3dd4d9a-38b3-4639-9ffe-b4f092b104d8.dll --anonymousPipes 125 126 --benchmarkName "ronimizy.SpbDotNet.TPC.Benchmarks.Benchmarks.BulkInsertSingleTypeBenchmark.BulkEmployeeInsert(Size: 10000, Factory: TphDatabaseContext)" --job "InvocationCount=1, UnrollFactor=1" --benchmarkId 4 in /Users/george/Documents/C#/ronimizy.SpbDotNet.TPC/Source/ronimizy.SpbDotNet.TPC.Benchmark/bin/Release/net7.0/e3dd4d9a-38b3-4639-9ffe-b4f092b104d8/bin/Release/net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.1 (7.0.122.56804), Arm64 RyuJIT AdvSIMD
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AdvSIMD,AES,CRC32,DP,RDM,SHA1,SHA256 VectorSize=128
+// Job: Job-VDZVGL(InvocationCount=1, UnrollFactor=1)
+
+[testcontainers.org 00:00:00.07] Connected to Docker:
+  Host: unix:/var/run/docker.sock
+  Server Version: 20.10.21
+  Kernel Version: 5.15.49-linuxkit
+  API Version: 1.41
+  Operating System: Docker Desktop
+  Total Memory: 7.76 GB
+[testcontainers.org 00:00:00.15] Docker container 2313fedba2ba06107d76579bca7090f98a2d2092ee54197cbb6f518bcac35d07 created
+[testcontainers.org 00:00:00.18] Start Docker container 2313fedba2ba06107d76579bca7090f98a2d2092ee54197cbb6f518bcac35d07
+[testcontainers.org 00:00:00.38] Docker container e3cddb18d43476619a8eebce8fc7c536e92f40d82eea013a7a1be907476ef4cf created
+[testcontainers.org 00:00:00.39] Start Docker container e3cddb18d43476619a8eebce8fc7c536e92f40d82eea013a7a1be907476ef4cf
+[testcontainers.org 00:00:00.57] Execute "pg_isready --host localhost --port 5432" at Docker container e3cddb18d43476619a8eebce8fc7c536e92f40d82eea013a7a1be907476ef4cf
+[testcontainers.org 00:00:01.65] Execute "pg_isready --host localhost --port 5432" at Docker container e3cddb18d43476619a8eebce8fc7c536e92f40d82eea013a7a1be907476ef4cf
+OverheadJitting  1: 1 op, 125125.00 ns, 125.1250 us/op
+WorkloadJitting  1: 1 op, 582443542.00 ns, 582.4435 ms/op
+
+OverheadWarmup   1: 1 op, 42.00 ns, 42.0000 ns/op
+OverheadWarmup   2: 1 op, 500.00 ns, 500.0000 ns/op
+OverheadWarmup   3: 1 op, 667.00 ns, 667.0000 ns/op
+OverheadWarmup   4: 1 op, 250.00 ns, 250.0000 ns/op
+OverheadWarmup   5: 1 op, 417.00 ns, 417.0000 ns/op
+OverheadWarmup   6: 1 op, 666.00 ns, 666.0000 ns/op
+OverheadWarmup   7: 1 op, 625.00 ns, 625.0000 ns/op
+
+OverheadActual   1: 1 op, 791.00 ns, 791.0000 ns/op
+OverheadActual   2: 1 op, 750.00 ns, 750.0000 ns/op
+OverheadActual   3: 1 op, 250.00 ns, 250.0000 ns/op
+OverheadActual   4: 1 op, 250.00 ns, 250.0000 ns/op
+OverheadActual   5: 1 op, 458.00 ns, 458.0000 ns/op
+OverheadActual   6: 1 op, 458.00 ns, 458.0000 ns/op
+OverheadActual   7: 1 op, 5000.00 ns, 5.0000 us/op
+OverheadActual   8: 1 op, 667.00 ns, 667.0000 ns/op
+OverheadActual   9: 1 op, 666.00 ns, 666.0000 ns/op
+OverheadActual  10: 1 op, 208.00 ns, 208.0000 ns/op
+OverheadActual  11: 1 op, 250.00 ns, 250.0000 ns/op
+OverheadActual  12: 1 op, 292.00 ns, 292.0000 ns/op
+OverheadActual  13: 1 op, 125.00 ns, 125.0000 ns/op
+OverheadActual  14: 1 op, 0.00 ns, 0.0000 ns/op
+OverheadActual  15: 1 op, 625.00 ns, 625.0000 ns/op
+OverheadActual  16: 1 op, 208.00 ns, 208.0000 ns/op
+OverheadActual  17: 1 op, 166.00 ns, 166.0000 ns/op
+OverheadActual  18: 1 op, 292.00 ns, 292.0000 ns/op
+OverheadActual  19: 1 op, 709.00 ns, 709.0000 ns/op
+OverheadActual  20: 1 op, 583.00 ns, 583.0000 ns/op
+
+WorkloadWarmup   1: 1 op, 393706042.00 ns, 393.7060 ms/op
+WorkloadWarmup   2: 1 op, 357084541.00 ns, 357.0845 ms/op
+WorkloadWarmup   3: 1 op, 386570166.00 ns, 386.5702 ms/op
+WorkloadWarmup   4: 1 op, 353579000.00 ns, 353.5790 ms/op
+WorkloadWarmup   5: 1 op, 401944667.00 ns, 401.9447 ms/op
+WorkloadWarmup   6: 1 op, 385626583.00 ns, 385.6266 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 376936459.00 ns, 376.9365 ms/op
+WorkloadActual   2: 1 op, 384822292.00 ns, 384.8223 ms/op
+WorkloadActual   3: 1 op, 376088208.00 ns, 376.0882 ms/op
+WorkloadActual   4: 1 op, 372476042.00 ns, 372.4760 ms/op
+WorkloadActual   5: 1 op, 372790792.00 ns, 372.7908 ms/op
+WorkloadActual   6: 1 op, 386594625.00 ns, 386.5946 ms/op
+WorkloadActual   7: 1 op, 377777416.00 ns, 377.7774 ms/op
+WorkloadActual   8: 1 op, 374549042.00 ns, 374.5490 ms/op
+WorkloadActual   9: 1 op, 397509042.00 ns, 397.5090 ms/op
+WorkloadActual  10: 1 op, 382032042.00 ns, 382.0320 ms/op
+WorkloadActual  11: 1 op, 376339584.00 ns, 376.3396 ms/op
+WorkloadActual  12: 1 op, 415584209.00 ns, 415.5842 ms/op
+WorkloadActual  13: 1 op, 394115500.00 ns, 394.1155 ms/op
+WorkloadActual  14: 1 op, 393260917.00 ns, 393.2609 ms/op
+WorkloadActual  15: 1 op, 388515708.00 ns, 388.5157 ms/op
+WorkloadActual  16: 1 op, 411561750.00 ns, 411.5618 ms/op
+WorkloadActual  17: 1 op, 383421250.00 ns, 383.4212 ms/op
+WorkloadActual  18: 1 op, 382329333.00 ns, 382.3293 ms/op
+WorkloadActual  19: 1 op, 414641667.00 ns, 414.6417 ms/op
+WorkloadActual  20: 1 op, 364983708.00 ns, 364.9837 ms/op
+WorkloadActual  21: 1 op, 379901750.00 ns, 379.9017 ms/op
+WorkloadActual  22: 1 op, 382396500.00 ns, 382.3965 ms/op
+WorkloadActual  23: 1 op, 388178500.00 ns, 388.1785 ms/op
+WorkloadActual  24: 1 op, 383222209.00 ns, 383.2222 ms/op
+WorkloadActual  25: 1 op, 398739750.00 ns, 398.7398 ms/op
+WorkloadActual  26: 1 op, 399024708.00 ns, 399.0247 ms/op
+WorkloadActual  27: 1 op, 388643750.00 ns, 388.6438 ms/op
+WorkloadActual  28: 1 op, 381731666.00 ns, 381.7317 ms/op
+WorkloadActual  29: 1 op, 385324709.00 ns, 385.3247 ms/op
+WorkloadActual  30: 1 op, 377072750.00 ns, 377.0727 ms/op
+WorkloadActual  31: 1 op, 379793000.00 ns, 379.7930 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 376936084.00 ns, 376.9361 ms/op
+WorkloadResult   2: 1 op, 384821917.00 ns, 384.8219 ms/op
+WorkloadResult   3: 1 op, 376087833.00 ns, 376.0878 ms/op
+WorkloadResult   4: 1 op, 372475667.00 ns, 372.4757 ms/op
+WorkloadResult   5: 1 op, 372790417.00 ns, 372.7904 ms/op
+WorkloadResult   6: 1 op, 386594250.00 ns, 386.5942 ms/op
+WorkloadResult   7: 1 op, 377777041.00 ns, 377.7770 ms/op
+WorkloadResult   8: 1 op, 374548667.00 ns, 374.5487 ms/op
+WorkloadResult   9: 1 op, 397508667.00 ns, 397.5087 ms/op
+WorkloadResult  10: 1 op, 382031667.00 ns, 382.0317 ms/op
+WorkloadResult  11: 1 op, 376339209.00 ns, 376.3392 ms/op
+WorkloadResult  12: 1 op, 394115125.00 ns, 394.1151 ms/op
+WorkloadResult  13: 1 op, 393260542.00 ns, 393.2605 ms/op
+WorkloadResult  14: 1 op, 388515333.00 ns, 388.5153 ms/op
+WorkloadResult  15: 1 op, 383420875.00 ns, 383.4209 ms/op
+WorkloadResult  16: 1 op, 382328958.00 ns, 382.3290 ms/op
+WorkloadResult  17: 1 op, 364983333.00 ns, 364.9833 ms/op
+WorkloadResult  18: 1 op, 379901375.00 ns, 379.9014 ms/op
+WorkloadResult  19: 1 op, 382396125.00 ns, 382.3961 ms/op
+WorkloadResult  20: 1 op, 388178125.00 ns, 388.1781 ms/op
+WorkloadResult  21: 1 op, 383221834.00 ns, 383.2218 ms/op
+WorkloadResult  22: 1 op, 398739375.00 ns, 398.7394 ms/op
+WorkloadResult  23: 1 op, 399024333.00 ns, 399.0243 ms/op
+WorkloadResult  24: 1 op, 388643375.00 ns, 388.6434 ms/op
+WorkloadResult  25: 1 op, 381731291.00 ns, 381.7313 ms/op
+WorkloadResult  26: 1 op, 385324334.00 ns, 385.3243 ms/op
+WorkloadResult  27: 1 op, 377072375.00 ns, 377.0724 ms/op
+WorkloadResult  28: 1 op, 379792625.00 ns, 379.7926 ms/op
+// GC:  18 5 0 126924808 1
+// Threading:  112 0 1
+
+[testcontainers.org 00:00:49.49] Delete Docker container e3cddb18d43476619a8eebce8fc7c536e92f40d82eea013a7a1be907476ef4cf
+// AfterAll
+// Benchmark Process 62788 has exited with code 0.
+
+Mean = 383.163 ms, StdErr = 1.577 ms (0.41%), N = 28, StdDev = 8.344 ms
+Min = 364.983 ms, Q1 = 377.038 ms, Median = 382.363 ms, Q3 = 388.262 ms, Max = 399.024 ms
+IQR = 11.224 ms, LowerFence = 360.202 ms, UpperFence = 405.099 ms
+ConfidenceInterval = [377.345 ms; 388.981 ms] (CI 99.9%), Margin = 5.818 ms (1.52% of Mean)
+Skewness = 0.2, Kurtosis = 2.5, MValue = 2
+
+// ** Remained 1 (16.7%) benchmark(s) to run. Estimated finish 2023-01-19 23:07 (0h 0m from now) **
+// **************************
+// Benchmark: BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: Job-VUEDRE(InvocationCount=1, UnrollFactor=1) [Size=10000, Factory=TptDatabaseContext]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet e3dd4d9a-38b3-4639-9ffe-b4f092b104d8.dll --anonymousPipes 125 126 --benchmarkName "ronimizy.SpbDotNet.TPC.Benchmarks.Benchmarks.BulkInsertSingleTypeBenchmark.BulkEmployeeInsert(Size: 10000, Factory: TptDatabaseContext)" --job "InvocationCount=1, UnrollFactor=1" --benchmarkId 5 in /Users/george/Documents/C#/ronimizy.SpbDotNet.TPC/Source/ronimizy.SpbDotNet.TPC.Benchmark/bin/Release/net7.0/e3dd4d9a-38b3-4639-9ffe-b4f092b104d8/bin/Release/net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.1 (7.0.122.56804), Arm64 RyuJIT AdvSIMD
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AdvSIMD,AES,CRC32,DP,RDM,SHA1,SHA256 VectorSize=128
+// Job: Job-FIFVPH(InvocationCount=1, UnrollFactor=1)
+
+[testcontainers.org 00:00:00.07] Connected to Docker:
+  Host: unix:/var/run/docker.sock
+  Server Version: 20.10.21
+  Kernel Version: 5.15.49-linuxkit
+  API Version: 1.41
+  Operating System: Docker Desktop
+  Total Memory: 7.76 GB
+[testcontainers.org 00:00:00.15] Docker container 449f6199d8a7b4206ac90029b8aef52a6cf0b09df932245174b48f095986375c created
+[testcontainers.org 00:00:00.19] Start Docker container 449f6199d8a7b4206ac90029b8aef52a6cf0b09df932245174b48f095986375c
+[testcontainers.org 00:00:00.40] Docker container a8aa12b8d4296ce36e18bdade0059a17b491e601921a0189ba4cee9aec1eea0d created
+[testcontainers.org 00:00:00.41] Start Docker container a8aa12b8d4296ce36e18bdade0059a17b491e601921a0189ba4cee9aec1eea0d
+[testcontainers.org 00:00:00.59] Execute "pg_isready --host localhost --port 5432" at Docker container a8aa12b8d4296ce36e18bdade0059a17b491e601921a0189ba4cee9aec1eea0d
+[testcontainers.org 00:00:01.68] Execute "pg_isready --host localhost --port 5432" at Docker container a8aa12b8d4296ce36e18bdade0059a17b491e601921a0189ba4cee9aec1eea0d
+OverheadJitting  1: 1 op, 160458.00 ns, 160.4580 us/op
+WorkloadJitting  1: 1 op, 819105625.00 ns, 819.1056 ms/op
+
+OverheadWarmup   1: 1 op, 666.00 ns, 666.0000 ns/op
+OverheadWarmup   2: 1 op, 583.00 ns, 583.0000 ns/op
+OverheadWarmup   3: 1 op, 459.00 ns, 459.0000 ns/op
+OverheadWarmup   4: 1 op, 291.00 ns, 291.0000 ns/op
+OverheadWarmup   5: 1 op, 375.00 ns, 375.0000 ns/op
+OverheadWarmup   6: 1 op, 292.00 ns, 292.0000 ns/op
+OverheadWarmup   7: 1 op, 500.00 ns, 500.0000 ns/op
+OverheadWarmup   8: 1 op, 500.00 ns, 500.0000 ns/op
+
+OverheadActual   1: 1 op, 500.00 ns, 500.0000 ns/op
+OverheadActual   2: 1 op, 250.00 ns, 250.0000 ns/op
+OverheadActual   3: 1 op, 583.00 ns, 583.0000 ns/op
+OverheadActual   4: 1 op, 708.00 ns, 708.0000 ns/op
+OverheadActual   5: 1 op, 750.00 ns, 750.0000 ns/op
+OverheadActual   6: 1 op, 3083.00 ns, 3.0830 us/op
+OverheadActual   7: 1 op, 0.00 ns, 0.0000 ns/op
+OverheadActual   8: 1 op, 541.00 ns, 541.0000 ns/op
+OverheadActual   9: 1 op, 334.00 ns, 334.0000 ns/op
+OverheadActual  10: 1 op, 375.00 ns, 375.0000 ns/op
+OverheadActual  11: 1 op, 0.00 ns, 0.0000 ns/op
+OverheadActual  12: 1 op, 667.00 ns, 667.0000 ns/op
+OverheadActual  13: 1 op, 250.00 ns, 250.0000 ns/op
+OverheadActual  14: 1 op, 334.00 ns, 334.0000 ns/op
+OverheadActual  15: 1 op, 208.00 ns, 208.0000 ns/op
+OverheadActual  16: 1 op, 83.00 ns, 83.0000 ns/op
+OverheadActual  17: 1 op, 375.00 ns, 375.0000 ns/op
+OverheadActual  18: 1 op, 209.00 ns, 209.0000 ns/op
+OverheadActual  19: 1 op, 750.00 ns, 750.0000 ns/op
+OverheadActual  20: 1 op, 750.00 ns, 750.0000 ns/op
+
+WorkloadWarmup   1: 1 op, 676948000.00 ns, 676.9480 ms/op
+WorkloadWarmup   2: 1 op, 675578250.00 ns, 675.5783 ms/op
+WorkloadWarmup   3: 1 op, 692591583.00 ns, 692.5916 ms/op
+WorkloadWarmup   4: 1 op, 659251167.00 ns, 659.2512 ms/op
+WorkloadWarmup   5: 1 op, 727535250.00 ns, 727.5353 ms/op
+WorkloadWarmup   6: 1 op, 752025000.00 ns, 752.0250 ms/op
+WorkloadWarmup   7: 1 op, 687832791.00 ns, 687.8328 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 693944125.00 ns, 693.9441 ms/op
+WorkloadActual   2: 1 op, 665019041.00 ns, 665.0190 ms/op
+WorkloadActual   3: 1 op, 695925541.00 ns, 695.9255 ms/op
+WorkloadActual   4: 1 op, 654890417.00 ns, 654.8904 ms/op
+WorkloadActual   5: 1 op, 668181000.00 ns, 668.1810 ms/op
+WorkloadActual   6: 1 op, 678575834.00 ns, 678.5758 ms/op
+WorkloadActual   7: 1 op, 663396500.00 ns, 663.3965 ms/op
+WorkloadActual   8: 1 op, 684826792.00 ns, 684.8268 ms/op
+WorkloadActual   9: 1 op, 671407667.00 ns, 671.4077 ms/op
+WorkloadActual  10: 1 op, 712263084.00 ns, 712.2631 ms/op
+WorkloadActual  11: 1 op, 706711333.00 ns, 706.7113 ms/op
+WorkloadActual  12: 1 op, 652887708.00 ns, 652.8877 ms/op
+WorkloadActual  13: 1 op, 669983208.00 ns, 669.9832 ms/op
+WorkloadActual  14: 1 op, 680064709.00 ns, 680.0647 ms/op
+WorkloadActual  15: 1 op, 722783916.00 ns, 722.7839 ms/op
+WorkloadActual  16: 1 op, 664007083.00 ns, 664.0071 ms/op
+WorkloadActual  17: 1 op, 712264209.00 ns, 712.2642 ms/op
+WorkloadActual  18: 1 op, 681285667.00 ns, 681.2857 ms/op
+WorkloadActual  19: 1 op, 671422417.00 ns, 671.4224 ms/op
+WorkloadActual  20: 1 op, 694497958.00 ns, 694.4980 ms/op
+WorkloadActual  21: 1 op, 749298833.00 ns, 749.2988 ms/op
+WorkloadActual  22: 1 op, 678553083.00 ns, 678.5531 ms/op
+WorkloadActual  23: 1 op, 661431625.00 ns, 661.4316 ms/op
+WorkloadActual  24: 1 op, 686578500.00 ns, 686.5785 ms/op
+WorkloadActual  25: 1 op, 661166416.00 ns, 661.1664 ms/op
+WorkloadActual  26: 1 op, 662627125.00 ns, 662.6271 ms/op
+WorkloadActual  27: 1 op, 674187208.00 ns, 674.1872 ms/op
+WorkloadActual  28: 1 op, 711624542.00 ns, 711.6245 ms/op
+WorkloadActual  29: 1 op, 708563500.00 ns, 708.5635 ms/op
+WorkloadActual  30: 1 op, 653861458.00 ns, 653.8615 ms/op
+WorkloadActual  31: 1 op, 687025292.00 ns, 687.0253 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 693943750.00 ns, 693.9438 ms/op
+WorkloadResult   2: 1 op, 665018666.00 ns, 665.0187 ms/op
+WorkloadResult   3: 1 op, 695925166.00 ns, 695.9252 ms/op
+WorkloadResult   4: 1 op, 654890042.00 ns, 654.8900 ms/op
+WorkloadResult   5: 1 op, 668180625.00 ns, 668.1806 ms/op
+WorkloadResult   6: 1 op, 678575459.00 ns, 678.5755 ms/op
+WorkloadResult   7: 1 op, 663396125.00 ns, 663.3961 ms/op
+WorkloadResult   8: 1 op, 684826417.00 ns, 684.8264 ms/op
+WorkloadResult   9: 1 op, 671407292.00 ns, 671.4073 ms/op
+WorkloadResult  10: 1 op, 712262709.00 ns, 712.2627 ms/op
+WorkloadResult  11: 1 op, 706710958.00 ns, 706.7110 ms/op
+WorkloadResult  12: 1 op, 652887333.00 ns, 652.8873 ms/op
+WorkloadResult  13: 1 op, 669982833.00 ns, 669.9828 ms/op
+WorkloadResult  14: 1 op, 680064334.00 ns, 680.0643 ms/op
+WorkloadResult  15: 1 op, 722783541.00 ns, 722.7835 ms/op
+WorkloadResult  16: 1 op, 664006708.00 ns, 664.0067 ms/op
+WorkloadResult  17: 1 op, 712263834.00 ns, 712.2638 ms/op
+WorkloadResult  18: 1 op, 681285292.00 ns, 681.2853 ms/op
+WorkloadResult  19: 1 op, 671422042.00 ns, 671.4220 ms/op
+WorkloadResult  20: 1 op, 694497583.00 ns, 694.4976 ms/op
+WorkloadResult  21: 1 op, 678552708.00 ns, 678.5527 ms/op
+WorkloadResult  22: 1 op, 661431250.00 ns, 661.4312 ms/op
+WorkloadResult  23: 1 op, 686578125.00 ns, 686.5781 ms/op
+WorkloadResult  24: 1 op, 661166041.00 ns, 661.1660 ms/op
+WorkloadResult  25: 1 op, 662626750.00 ns, 662.6268 ms/op
+WorkloadResult  26: 1 op, 674186833.00 ns, 674.1868 ms/op
+WorkloadResult  27: 1 op, 711624167.00 ns, 711.6242 ms/op
+WorkloadResult  28: 1 op, 708563125.00 ns, 708.5631 ms/op
+WorkloadResult  29: 1 op, 653861083.00 ns, 653.8611 ms/op
+WorkloadResult  30: 1 op, 687024917.00 ns, 687.0249 ms/op
+// GC:  34 12 0 232879936 1
+// Threading:  243 0 1
+
+[testcontainers.org 00:01:05.38] Delete Docker container a8aa12b8d4296ce36e18bdade0059a17b491e601921a0189ba4cee9aec1eea0d
+// AfterAll
+// Benchmark Process 62882 has exited with code 0.
+
+Mean = 680.998 ms, StdErr = 3.623 ms (0.53%), N = 30, StdDev = 19.843 ms
+Min = 652.887 ms, Q1 = 664.260 ms, Median = 678.564 ms, Q3 = 694.359 ms, Max = 722.784 ms
+IQR = 30.099 ms, LowerFence = 619.111 ms, UpperFence = 739.508 ms
+ConfidenceInterval = [667.741 ms; 694.256 ms] (CI 99.9%), Margin = 13.258 ms (1.95% of Mean)
+Skewness = 0.46, Kurtosis = 2, MValue = 2
+
+// ** Remained 0 (0.0%) benchmark(s) to run. Estimated finish 2023-01-19 23:07 (0h 0m from now) **
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts/results/ronimizy.SpbDotNet.TPC.Benchmarks.Benchmarks.BulkInsertSingleTypeBenchmark-report.csv
+  BenchmarkDotNet.Artifacts/results/ronimizy.SpbDotNet.TPC.Benchmarks.Benchmarks.BulkInsertSingleTypeBenchmark-report-github.md
+  BenchmarkDotNet.Artifacts/results/ronimizy.SpbDotNet.TPC.Benchmarks.Benchmarks.BulkInsertSingleTypeBenchmark-report.html
+
+// * Detailed results *
+BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: Job-VUEDRE(InvocationCount=1, UnrollFactor=1) [Size=1000, Factory=TpcDatabaseContext]
+Runtime = .NET 7.0.1 (7.0.122.56804), Arm64 RyuJIT AdvSIMD; GC = Concurrent Workstation
+Mean = 35.697 ms, StdErr = 0.169 ms (0.47%), N = 15, StdDev = 0.656 ms
+Min = 34.771 ms, Q1 = 35.249 ms, Median = 35.712 ms, Q3 = 36.071 ms, Max = 37.096 ms
+IQR = 0.822 ms, LowerFence = 34.016 ms, UpperFence = 37.304 ms
+ConfidenceInterval = [34.995 ms; 36.398 ms] (CI 99.9%), Margin = 0.702 ms (1.97% of Mean)
+Skewness = 0.4, Kurtosis = 2.21, MValue = 2
+-------------------- Histogram --------------------
+[34.745 ms ; 35.619 ms) | @@@@@@@
+[35.619 ms ; 37.197 ms) | @@@@@@@@
+---------------------------------------------------
+
+BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: Job-VUEDRE(InvocationCount=1, UnrollFactor=1) [Size=1000, Factory=TphDatabaseContext]
+Runtime = .NET 7.0.1 (7.0.122.56804), Arm64 RyuJIT AdvSIMD; GC = Concurrent Workstation
+Mean = 37.923 ms, StdErr = 0.183 ms (0.48%), N = 15, StdDev = 0.708 ms
+Min = 36.817 ms, Q1 = 37.432 ms, Median = 37.736 ms, Q3 = 38.448 ms, Max = 39.351 ms
+IQR = 1.016 ms, LowerFence = 35.909 ms, UpperFence = 39.972 ms
+ConfidenceInterval = [37.166 ms; 38.680 ms] (CI 99.9%), Margin = 0.757 ms (2.00% of Mean)
+Skewness = 0.35, Kurtosis = 1.99, MValue = 2
+-------------------- Histogram --------------------
+[36.440 ms ; 37.916 ms) | @@@@@@@@@
+[37.916 ms ; 38.879 ms) | @@@@@
+[38.879 ms ; 39.728 ms) | @
+---------------------------------------------------
+
+BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: Job-VUEDRE(InvocationCount=1, UnrollFactor=1) [Size=1000, Factory=TptDatabaseContext]
+Runtime = .NET 7.0.1 (7.0.122.56804), Arm64 RyuJIT AdvSIMD; GC = Concurrent Workstation
+Mean = 61.890 ms, StdErr = 0.214 ms (0.35%), N = 14, StdDev = 0.801 ms
+Min = 60.836 ms, Q1 = 61.255 ms, Median = 61.754 ms, Q3 = 62.551 ms, Max = 63.380 ms
+IQR = 1.296 ms, LowerFence = 59.312 ms, UpperFence = 64.494 ms
+ConfidenceInterval = [60.986 ms; 62.794 ms] (CI 99.9%), Margin = 0.904 ms (1.46% of Mean)
+Skewness = 0.43, Kurtosis = 1.7, MValue = 2
+-------------------- Histogram --------------------
+[60.813 ms ; 63.675 ms) | @@@@@@@@@@@@@@
+---------------------------------------------------
+
+BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: Job-VUEDRE(InvocationCount=1, UnrollFactor=1) [Size=10000, Factory=TpcDatabaseContext]
+Runtime = .NET 7.0.1 (7.0.122.56804), Arm64 RyuJIT AdvSIMD; GC = Concurrent Workstation
+Mean = 356.833 ms, StdErr = 1.986 ms (0.56%), N = 52, StdDev = 14.319 ms
+Min = 329.562 ms, Q1 = 346.148 ms, Median = 353.717 ms, Q3 = 362.039 ms, Max = 388.090 ms
+IQR = 15.891 ms, LowerFence = 322.312 ms, UpperFence = 385.876 ms
+ConfidenceInterval = [349.899 ms; 363.767 ms] (CI 99.9%), Margin = 6.934 ms (1.94% of Mean)
+Skewness = 0.77, Kurtosis = 2.65, MValue = 2.27
+-------------------- Histogram --------------------
+[329.511 ms ; 341.234 ms) | @@
+[341.234 ms ; 351.304 ms) | @@@@@@@@@@@@@@@@@@@@@@@
+[351.304 ms ; 364.089 ms) | @@@@@@@@@@@@@@@
+[364.089 ms ; 378.113 ms) | @@@@@
+[378.113 ms ; 388.184 ms) | @@@@@@@
+---------------------------------------------------
+
+BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: Job-VUEDRE(InvocationCount=1, UnrollFactor=1) [Size=10000, Factory=TphDatabaseContext]
+Runtime = .NET 7.0.1 (7.0.122.56804), Arm64 RyuJIT AdvSIMD; GC = Concurrent Workstation
+Mean = 383.163 ms, StdErr = 1.577 ms (0.41%), N = 28, StdDev = 8.344 ms
+Min = 364.983 ms, Q1 = 377.038 ms, Median = 382.363 ms, Q3 = 388.262 ms, Max = 399.024 ms
+IQR = 11.224 ms, LowerFence = 360.202 ms, UpperFence = 405.099 ms
+ConfidenceInterval = [377.345 ms; 388.981 ms] (CI 99.9%), Margin = 5.818 ms (1.52% of Mean)
+Skewness = 0.2, Kurtosis = 2.5, MValue = 2
+-------------------- Histogram --------------------
+[361.377 ms ; 372.582 ms) | @@
+[372.582 ms ; 381.335 ms) | @@@@@@@@@
+[381.335 ms ; 400.104 ms) | @@@@@@@@@@@@@@@@@
+---------------------------------------------------
+
+BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: Job-VUEDRE(InvocationCount=1, UnrollFactor=1) [Size=10000, Factory=TptDatabaseContext]
+Runtime = .NET 7.0.1 (7.0.122.56804), Arm64 RyuJIT AdvSIMD; GC = Concurrent Workstation
+Mean = 680.998 ms, StdErr = 3.623 ms (0.53%), N = 30, StdDev = 19.843 ms
+Min = 652.887 ms, Q1 = 664.260 ms, Median = 678.564 ms, Q3 = 694.359 ms, Max = 722.784 ms
+IQR = 30.099 ms, LowerFence = 619.111 ms, UpperFence = 739.508 ms
+ConfidenceInterval = [667.741 ms; 694.256 ms] (CI 99.9%), Margin = 13.258 ms (1.95% of Mean)
+Skewness = 0.46, Kurtosis = 2, MValue = 2
+-------------------- Histogram --------------------
+[644.505 ms ; 659.295 ms) | @@@
+[659.295 ms ; 676.058 ms) | @@@@@@@@@@@
+[676.058 ms ; 694.907 ms) | @@@@@@@@@
+[694.907 ms ; 723.129 ms) | @@@@@@@
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet=v0.13.4, OS=macOS 13.0 (22A380) [Darwin 22.1.0]
+Apple M1 Pro, 1 CPU, 10 logical and 10 physical cores
+.NET SDK=7.0.101
+  [Host]     : .NET 7.0.1 (7.0.122.56804), Arm64 RyuJIT AdvSIMD
+  Job-VUEDRE : .NET 7.0.1 (7.0.122.56804), Arm64 RyuJIT AdvSIMD
+
+InvocationCount=1  UnrollFactor=1  
+
+|             Method |  Size |            Factory |      Mean |     Error |    StdDev |       Gen0 |       Gen1 | Allocated |
+|------------------- |------ |------------------- |----------:|----------:|----------:|-----------:|-----------:|----------:|
+| BulkEmployeeInsert |  1000 | TpcDatabaseContext |  35.70 ms |  0.702 ms |  0.656 ms |  2000.0000 |          - |  13.32 MB |
+| BulkEmployeeInsert |  1000 | TphDatabaseContext |  37.92 ms |  0.757 ms |  0.708 ms |  2000.0000 |          - |  14.31 MB |
+| BulkEmployeeInsert |  1000 | TptDatabaseContext |  61.89 ms |  0.904 ms |  0.801 ms |  3000.0000 |          - |  24.06 MB |
+| BulkEmployeeInsert | 10000 | TpcDatabaseContext | 356.83 ms |  6.934 ms | 14.319 ms | 17000.0000 |  5000.0000 | 110.58 MB |
+| BulkEmployeeInsert | 10000 | TphDatabaseContext | 383.16 ms |  5.818 ms |  8.344 ms | 18000.0000 |  5000.0000 | 121.04 MB |
+| BulkEmployeeInsert | 10000 | TptDatabaseContext | 681.00 ms | 13.258 ms | 19.843 ms | 34000.0000 | 12000.0000 | 222.09 MB |
+
+// * Warnings *
+MinIterationTime
+  BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: InvocationCount=1, UnrollFactor=1 -> The minimum observed iteration time is 34.7716 ms which is very small. It's recommended to increase it to at least 100.0000 ms using more operations.
+  BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: InvocationCount=1, UnrollFactor=1 -> The minimum observed iteration time is 36.8167 ms which is very small. It's recommended to increase it to at least 100.0000 ms using more operations.
+  BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: InvocationCount=1, UnrollFactor=1 -> The minimum observed iteration time is 60.8364 ms which is very small. It's recommended to increase it to at least 100.0000 ms using more operations.
+
+// * Hints *
+Outliers
+  BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: InvocationCount=1, UnrollFactor=1 -> 1 outlier  was  removed (68.66 ms)
+  BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: InvocationCount=1, UnrollFactor=1 -> 1 outlier  was  removed (389.45 ms)
+  BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: InvocationCount=1, UnrollFactor=1 -> 3 outliers were removed (411.56 ms..415.58 ms)
+  BulkInsertSingleTypeBenchmark.BulkEmployeeInsert: InvocationCount=1, UnrollFactor=1 -> 1 outlier  was  removed (749.30 ms)
+
+// * Legends *
+  Size      : Value of the 'Size' parameter
+  Factory   : Value of the 'Factory' parameter
+  Mean      : Arithmetic mean of all measurements
+  Error     : Half of 99.9% confidence interval
+  StdDev    : Standard deviation of all measurements
+  Gen0      : GC Generation 0 collects per 1000 operations
+  Gen1      : GC Generation 1 collects per 1000 operations
+  Allocated : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  1 ms      : 1 Millisecond (0.001 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+Run time: 00:03:38 (218.43 sec), executed benchmarks: 6
+
+Global total time: 00:03:44 (224.54 sec), executed benchmarks: 6
+// * Artifacts cleanup *

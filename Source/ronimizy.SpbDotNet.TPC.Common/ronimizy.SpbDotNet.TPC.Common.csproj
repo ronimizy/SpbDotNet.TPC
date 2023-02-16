@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.2" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.2" />
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.1" />
+      <PackageReference Include="Serilog" Version="2.12.0" />
+      <PackageReference Include="Serilog.Extensions.Logging" Version="3.1.0" />
+      <PackageReference Include="Serilog.Sinks.XUnit" Version="3.0.3" />
+      <PackageReference Include="Testcontainers" Version="2.3.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ronimizy.SpbDotNet.TPC.DataAccess\ronimizy.SpbDotNet.TPC.DataAccess.csproj" />
+    </ItemGroup>
+
+</Project>

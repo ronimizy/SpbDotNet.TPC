@@ -1,0 +1,102 @@
+@startuml
+
+hide circle
+hide methods
+skinparam linetype ortho
+
+
+package Employee <<Rectangle>>
+{
+    entity Intern
+    {
+        Id: uuid
+        **UserId: uuid**
+        **ManagerId: uuid**
+        InternshipExpirationDate: datetime
+    }
+
+    entity Manager
+    {
+        Id: uuid
+        **UserId: uuid**
+        **ManagerId: uuid**
+    }
+
+    entity Subordinate
+    {
+        Id: uuid
+        **UserId: uuid**
+        **ManagerId: uuid**
+    }
+}
+
+entity ProjectClients
+{
+    **ClientId: uuid**
+    **ProjectId: uuid**
+}
+
+entity ProjectItemSupervisors
+{
+    **SupervisedItemId: uuid**
+    **SupervisorId: uuid**
+}
+
+entity Project
+{
+    Id: uuid
+    Name: text
+}
+
+package ProjectItem <<Rectangle>>
+{
+    entity ProjectStage
+    {
+        Id: uuid
+        Name: text
+        **ProjectId: uuid**
+        **ParentId: uuid**
+    }
+
+    entity ProjectTask
+    {
+        Id: uuid
+        Name: text
+        **ProjectId: uuid**
+        **ParentId: uuid**
+        StartDate: date
+        EndDate: date
+        **ExecutorId: uuid**
+        Description: text
+    }
+}
+
+entity User
+{
+    Id: uuid
+    Name: text
+}
+
+
+User "1" -- "1" Intern
+User "1" -- "1" Manager
+User "1" -up- "1" Subordinate
+
+Manager "0/1" -up- "0..N" Subordinate
+Manager "0/1" -- "0..N" Intern
+
+Project "1" -up- "0..N" ProjectClients
+Employee "1" -- "0..N" ProjectClients
+
+ProjectItem "1" -- "0..N" ProjectItemSupervisors
+Employee "        1" -down- "0..N" ProjectItemSupervisors
+
+ProjectItem "0..N" -- "1" Project
+
+Employee -- "0..N" ProjectTask
+
+ProjectTask "0..N" -- "0/1" ProjectStage
+ProjectStage "0..N" -- "0/1" ProjectStage
+
+
+@enduml

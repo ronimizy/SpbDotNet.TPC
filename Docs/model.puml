@@ -1,0 +1,86 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam linetype ortho
+
+class User
+{
+    + Guid Id
+    + string Name
+}
+
+class Project
+{
+    + Guid Id
+    + string Name
+    + ProjectItem[] Items
+    + Employee[] Clients
+}
+
+abstract class ProjectItem
+{
+    + Guid Id
+    + string Name
+    + Project Project
+    + Employee[] Supervisors
+}
+
+class ProjectStage
+{
+    + ProjectItem[] Children
+}
+
+class ProjectTask
+{
+    + DateTime? StartDate
+    + DateTime? EndDate
+    + Employee? Executor
+}
+
+abstract class Employee
+{
+    + Guid Id
+    + User User
+    + Manager? Manager
+    + Project[] Projects
+    + ProjectTask[] SupervisedItems
+}
+
+class Manager
+{
+    + Employee[] Employees
+}
+
+class Subordinate
+{
+}
+
+class Intern
+{
+    + DateTime InternshipExpirationDate
+}
+
+ProjectItem <|-up- ProjectStage
+ProjectItem <|-- ProjectTask
+
+Employee <|-- Manager
+Employee <|-right- Subordinate
+Subordinate <|-- Intern
+
+Project *- ProjectItem: 0..n
+ProjectItem *- Project: 1
+ProjectStage *-- ProjectItem: 0..n
+
+Manager *-- Employee: 0..n
+Employee *-- Manager: 0/1
+Employee *-left- User
+
+ProjectTask *-- Employee: 0/1
+ProjectItem *--* Employee: 0..n
+Project *--* Employee: 0..n
+
+hide Subordinate members
+hide methods
+
+
+@enduml

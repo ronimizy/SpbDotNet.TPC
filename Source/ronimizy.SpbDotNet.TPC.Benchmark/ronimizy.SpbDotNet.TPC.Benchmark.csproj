@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>ronimizy.SpbDotNet.TPC.Benchmarks</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="BenchmarkDotNet" Version="0.13.4" />
+      <PackageReference Include="FluentScanning" Version="2.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ronimizy.SpbDotNet.TPC.Application\ronimizy.SpbDotNet.TPC.Application.csproj" />
+      <ProjectReference Include="..\ronimizy.SpbDotNet.TPC.Common\ronimizy.SpbDotNet.TPC.Common.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="BenchmarkDotNet.Artifacts" />
+    </ItemGroup>
+
+</Project>

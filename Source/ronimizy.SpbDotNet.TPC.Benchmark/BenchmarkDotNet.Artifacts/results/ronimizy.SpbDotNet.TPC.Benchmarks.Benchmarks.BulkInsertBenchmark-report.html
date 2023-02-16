@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>ronimizy.SpbDotNet.TPC.Benchmarks.Benchmarks.BulkInsertBenchmark-20230114-130850</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.3, OS=Windows 10 (10.0.19044.2486/21H2/November2021Update)
+Unknown processor
+.NET SDK=7.0.100
+  [Host]     : .NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2
+  Job-SKVIAV : .NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2
+</code></pre>
+<pre><code>InvocationCount=1  UnrollFactor=1  
+</code></pre>
+
+<table>
+<thead><tr><th>      Method</th><th>Size</th><th>     Factory</th><th> Mean</th><th>Error</th><th>StdDev</th><th>Gen0</th><th>Gen1</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>BulkEmployeeInsert</td><td>1000</td><td>TpcDatabaseContext</td><td>81.33 ms</td><td>1.056 ms</td><td>0.936 ms</td><td>1000.0000</td><td>-</td><td>15.49 MB</td>
+</tr><tr><td>BulkEmployeeInsert</td><td>1000</td><td>TphDatabaseContext</td><td>85.00 ms</td><td>1.072 ms</td><td>1.003 ms</td><td>1000.0000</td><td>-</td><td>17.13 MB</td>
+</tr><tr><td>BulkEmployeeInsert</td><td>1000</td><td>TptDatabaseContext</td><td>150.84 ms</td><td>1.278 ms</td><td>1.196 ms</td><td>3000.0000</td><td>-</td><td>30.76 MB</td>
+</tr><tr><td>BulkEmployeeInsert</td><td>10000</td><td>TpcDatabaseContext</td><td>828.78 ms</td><td>4.468 ms</td><td>3.961 ms</td><td>17000.0000</td><td>5000.0000</td><td>153.14 MB</td>
+</tr><tr><td>BulkEmployeeInsert</td><td>10000</td><td>TphDatabaseContext</td><td>918.49 ms</td><td>3.091 ms</td><td>2.581 ms</td><td>19000.0000</td><td>7000.0000</td><td>170.52 MB</td>
+</tr><tr><td>BulkEmployeeInsert</td><td>10000</td><td>TptDatabaseContext</td><td>1,621.78 ms</td><td>5.142 ms</td><td>4.558 ms</td><td>35000.0000</td><td>11000.0000</td><td>304.71 MB</td>
+</tr></tbody></table>
+</body>
+</html>

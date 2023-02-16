@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>ronimizy.SpbDotNet.TPC.Benchmarks.Benchmarks.SingleInsertBenchmark-20230114-180810</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.3, OS=Windows 10 (10.0.19044.2486/21H2/November2021Update)
+Unknown processor
+.NET SDK=7.0.100
+  [Host]     : .NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2
+  Job-SKVIAV : .NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2
+</code></pre>
+<pre><code>InvocationCount=1  UnrollFactor=1  
+</code></pre>
+
+<table>
+<thead><tr><th>    Method</th><th>     Factory</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>SingleUserInsert</td><td>TpcDatabaseContext</td><td>1.401 ms</td><td>0.0379 ms</td><td>0.1087 ms</td><td>38.59 KB</td>
+</tr><tr><td>SingleUserInsert</td><td>TphDatabaseContext</td><td>1.321 ms</td><td>0.0401 ms</td><td>0.1162 ms</td><td>38.23 KB</td>
+</tr><tr><td>SingleUserInsert</td><td>TptDatabaseContext</td><td>1.468 ms</td><td>0.0475 ms</td><td>0.1370 ms</td><td>38.23 KB</td>
+</tr></tbody></table>
+</body>
+</html>
