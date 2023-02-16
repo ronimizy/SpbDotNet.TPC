@@ -35,5 +35,7 @@ public class TphDatabaseContext : DatabaseContextBase, IContextOptionsCreatable<
             .HasValue<CasualEmployeeUniform>(1)
             .HasValue<OfficialEmployeeUniform>(2)
             .HasValue<DisplayEmployeeUniform>(3);
+
+        modelBuilder.Entity<Employee>().HasIndex("Discriminator");
     }
 }

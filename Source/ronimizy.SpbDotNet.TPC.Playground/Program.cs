@@ -20,7 +20,7 @@ using ronimizy.SpbDotNet.TPC.Model.Users;
 
 Randomizer.Seed = new Random(101);
 
-await InitDatabase<TphDatabaseContext>();
+await InitDatabase<TpcDatabaseContext>();
 
 async Task InitDatabase<T>() where T : DatabaseContextBase, IContextOptionsCreatable<T>
 {

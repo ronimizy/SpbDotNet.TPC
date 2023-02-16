@@ -1,32 +1,33 @@
 ``` ini
 
 BenchmarkDotNet=v0.13.4, OS=Windows 10 (10.0.19044.2486/21H2/November2021Update)
-Unknown processor
-.NET SDK=7.0.100
-  [Host]     : .NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2
-  Job-MDMPRP : .NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2
+Intel Xeon CPU E5-2667 v2 3.30GHz, 1 CPU, 16 logical and 8 physical cores
+.NET SDK=7.0.102
+  [Host]     : .NET 7.0.2 (7.0.222.60605), X64 RyuJIT AVX
+  Job-UVYXDK : .NET 7.0.2 (7.0.222.60605), X64 RyuJIT AVX
 
 InvocationCount=1  UnrollFactor=1  
 
 ```
+
 ## Sparse query full hierarchy SQL Server 2019
 
-| Size  | Factory            |      Mean |     Error |    StdDev |      Gen0 |   Allocated |
-|-------|--------------------|----------:|----------:|----------:|----------:|------------:|
-| 1000  | TpcDatabaseContext |  8.171 ms | 0.1615 ms | 0.1728 ms |         - |  1514.31 KB |
-| 1000  | TphDatabaseContext |  6.422 ms | 0.1238 ms | 0.1521 ms |         - |  1393.21 KB |
-| 1000  | TptDatabaseContext | 11.182 ms | 0.1318 ms | 0.1169 ms |         - |  1512.57 KB |
-| 10000 | TpcDatabaseContext | 59.582 ms | 0.7436 ms | 0.6956 ms | 1000.0000 |  14997.4 KB |
-| 10000 | TphDatabaseContext | 56.029 ms | 0.7086 ms | 0.6628 ms | 1000.0000 | 13864.45 KB |
-| 10000 | TptDatabaseContext | 65.697 ms | 0.8209 ms | 0.7678 ms | 1000.0000 | 14996.85 KB |
+| Size  | Strategy |       Mean |     Error |    StdDev |      Gen0 |   Allocated |
+|-------|----------|-----------:|----------:|----------:|----------:|------------:|
+| 1000  | Tpc      |  11.859 ms | 0.2029 ms | 0.1898 ms |         - |  1513.26 KB |
+| 1000  | Tph      |   9.073 ms | 0.1270 ms | 0.1126 ms |         - |  1392.16 KB |
+| 1000  | Tpt      |  15.875 ms | 0.1329 ms | 0.1178 ms |         - |   1511.8 KB |
+| 10000 | Tpc      |  91.432 ms | 0.2630 ms | 0.2332 ms | 1000.0000 | 14996.63 KB |
+| 10000 | Tph      |  82.738 ms | 0.9170 ms | 0.8129 ms | 1000.0000 | 13863.67 KB |
+| 10000 | Tpt      | 100.106 ms | 1.6557 ms | 1.5488 ms | 1000.0000 | 14995.56 KB |
 
 ## Sparse query single type SQL Server 2019
 
-| Size  | Factory            |      Mean |     Error |    StdDev | Gen0 |  Allocated |
-|-------|--------------------|----------:|----------:|----------:|-----:|-----------:|
-| 1000  | TpcDatabaseContext |  2.780 ms | 0.0605 ms | 0.1784 ms |    - |  554.91 KB |
-| 1000  | TphDatabaseContext |  4.302 ms | 0.0851 ms | 0.1513 ms |    - |  522.75 KB |
-| 1000  | TptDatabaseContext |  4.737 ms | 0.0934 ms | 0.1799 ms |    - |  555.91 KB |
-| 10000 | TpcDatabaseContext | 14.237 ms | 0.2822 ms | 0.4868 ms |    - | 5424.34 KB |
-| 10000 | TphDatabaseContext | 18.703 ms | 0.3638 ms | 0.4044 ms |    - | 5066.23 KB |
-| 10000 | TptDatabaseContext | 17.645 ms | 0.3476 ms | 0.6357 ms |    - |  5459.7 KB |
+| Size  | Strategy |      Mean |     Error |    StdDev | Gen0 |  Allocated |
+|-------|----------|----------:|----------:|----------:|-----:|-----------:|
+| 1000  | Tpc      |  3.102 ms | 0.0620 ms | 0.0828 ms |    - |  554.14 KB |
+| 1000  | Tph      |  5.364 ms | 0.0938 ms | 0.0832 ms |    - |  522.19 KB |
+| 1000  | Tpt      |  5.896 ms | 0.1179 ms | 0.2487 ms |    - |  554.73 KB |
+| 10000 | Tpc      | 19.785 ms | 0.3932 ms | 0.4829 ms |    - | 5423.56 KB |
+| 10000 | Tph      | 26.423 ms | 0.3275 ms | 0.3063 ms |    - | 5065.46 KB |
+| 10000 | Tpt      | 24.268 ms | 0.4349 ms | 0.6237 ms |    - | 5458.92 KB |
